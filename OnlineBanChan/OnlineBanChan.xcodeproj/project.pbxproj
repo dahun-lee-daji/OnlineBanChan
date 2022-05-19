@@ -99,7 +99,6 @@
 				6E784938607981777040F64B /* Pods-OnlineBanChanTests.debug.xcconfig */,
 				F77B606348F9375530563440 /* Pods-OnlineBanChanTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -127,13 +126,9 @@
 		B0A513C6283635C500A05BB7 /* OnlineBanChan */ = {
 			isa = PBXGroup;
 			children = (
-				B0A513C7283635C500A05BB7 /* AppDelegate.swift */,
-				B0A513C9283635C500A05BB7 /* SceneDelegate.swift */,
-				B0A513CB283635C500A05BB7 /* ViewController.swift */,
-				B0A513CD283635C500A05BB7 /* Main.storyboard */,
-				B0A513D0283635C900A05BB7 /* Assets.xcassets */,
-				B0A513D2283635C900A05BB7 /* LaunchScreen.storyboard */,
-				B0A513D5283635C900A05BB7 /* Info.plist */,
+				B0A513F928364A9900A05BB7 /* Presentation */,
+				B0A513F728364A4900A05BB7 /* Application */,
+				B0A513F828364A6400A05BB7 /* Resources */,
 			);
 			path = OnlineBanChan;
 			sourceTree = "<group>";
@@ -144,6 +139,50 @@
 				B0A513DE283635C900A05BB7 /* OnlineBanChanTests.swift */,
 			);
 			path = OnlineBanChanTests;
+			sourceTree = "<group>";
+		};
+		B0A513F728364A4900A05BB7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B0A513C7283635C500A05BB7 /* AppDelegate.swift */,
+				B0A513C9283635C500A05BB7 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B0A513F828364A6400A05BB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0A513D5283635C900A05BB7 /* Info.plist */,
+				B0A513D0283635C900A05BB7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B0A513F928364A9900A05BB7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B0A513FB28364BEB00A05BB7 /* MainView */,
+				B0A513FA28364BD200A05BB7 /* Launch */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B0A513FA28364BD200A05BB7 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				B0A513D2283635C900A05BB7 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		B0A513FB28364BEB00A05BB7 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				B0A513CB283635C500A05BB7 /* ViewController.swift */,
+				B0A513CD283635C500A05BB7 /* Main.storyboard */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,0 +1,695 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12064BE5E0329571B56356E2 /* libPods-OnlineBanChanTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2940196FB788FE83AC5B5487 /* libPods-OnlineBanChanTests.a */; };
+		465C36FA9253C093D139C1EF /* Pods_OnlineBanChan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103AEC8358290200A944D75 /* Pods_OnlineBanChan.framework */; };
+		B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513C7283635C500A05BB7 /* AppDelegate.swift */; };
+		B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513C9283635C500A05BB7 /* SceneDelegate.swift */; };
+		B0A513CC283635C500A05BB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513CB283635C500A05BB7 /* ViewController.swift */; };
+		B0A513CF283635C500A05BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A513CD283635C500A05BB7 /* Main.storyboard */; };
+		B0A513D1283635C900A05BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A513D0283635C900A05BB7 /* Assets.xcassets */; };
+		B0A513D4283635C900A05BB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A513D2283635C900A05BB7 /* LaunchScreen.storyboard */; };
+		B0A513DF283635C900A05BB7 /* OnlineBanChanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513DE283635C900A05BB7 /* OnlineBanChanTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0A513DB283635C900A05BB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0A513BC283635C500A05BB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0A513C3283635C500A05BB7;
+			remoteInfo = OnlineBanChan;
+		};
+		B0A513E5283635C900A05BB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0A513BC283635C500A05BB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0A513C3283635C500A05BB7;
+			remoteInfo = OnlineBanChan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0103AEC8358290200A944D75 /* Pods_OnlineBanChan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineBanChan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2940196FB788FE83AC5B5487 /* libPods-OnlineBanChanTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OnlineBanChanTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3776518205C22A94AABA66D4 /* Pods-OnlineBanChan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChan.release.xcconfig"; path = "Target Support Files/Pods-OnlineBanChan/Pods-OnlineBanChan.release.xcconfig"; sourceTree = "<group>"; };
+		3D03836B94CB4668E5F1EAF4 /* Pods-OnlineBanChan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChan.debug.xcconfig"; path = "Target Support Files/Pods-OnlineBanChan/Pods-OnlineBanChan.debug.xcconfig"; sourceTree = "<group>"; };
+		6E784938607981777040F64B /* Pods-OnlineBanChanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChanTests.debug.xcconfig"; path = "Target Support Files/Pods-OnlineBanChanTests/Pods-OnlineBanChanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0A513C4283635C500A05BB7 /* OnlineBanChan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineBanChan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0A513C7283635C500A05BB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0A513C9283635C500A05BB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B0A513CB283635C500A05BB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0A513CE283635C500A05BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0A513D0283635C900A05BB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0A513D3283635C900A05BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0A513D5283635C900A05BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0A513DA283635C900A05BB7 /* OnlineBanChanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineBanChanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0A513DE283635C900A05BB7 /* OnlineBanChanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineBanChanTests.swift; sourceTree = "<group>"; };
+		B0A513E4283635C900A05BB7 /* OnlineBanChanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineBanChanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77B606348F9375530563440 /* Pods-OnlineBanChanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChanTests.release.xcconfig"; path = "Target Support Files/Pods-OnlineBanChanTests/Pods-OnlineBanChanTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0A513C1283635C500A05BB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465C36FA9253C093D139C1EF /* Pods_OnlineBanChan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0A513D7283635C900A05BB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12064BE5E0329571B56356E2 /* libPods-OnlineBanChanTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0A513E1283635C900A05BB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		62015035645097A617F06C44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0103AEC8358290200A944D75 /* Pods_OnlineBanChan.framework */,
+				2940196FB788FE83AC5B5487 /* libPods-OnlineBanChanTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0842E6D6B2F38C5AC54F084 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D03836B94CB4668E5F1EAF4 /* Pods-OnlineBanChan.debug.xcconfig */,
+				3776518205C22A94AABA66D4 /* Pods-OnlineBanChan.release.xcconfig */,
+				6E784938607981777040F64B /* Pods-OnlineBanChanTests.debug.xcconfig */,
+				F77B606348F9375530563440 /* Pods-OnlineBanChanTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B0A513BB283635C500A05BB7 = {
+			isa = PBXGroup;
+			children = (
+				B0A513C6283635C500A05BB7 /* OnlineBanChan */,
+				B0A513DD283635C900A05BB7 /* OnlineBanChanTests */,
+				B0A513C5283635C500A05BB7 /* Products */,
+				B0842E6D6B2F38C5AC54F084 /* Pods */,
+				62015035645097A617F06C44 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B0A513C5283635C500A05BB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0A513C4283635C500A05BB7 /* OnlineBanChan.app */,
+				B0A513DA283635C900A05BB7 /* OnlineBanChanTests.xctest */,
+				B0A513E4283635C900A05BB7 /* OnlineBanChanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0A513C6283635C500A05BB7 /* OnlineBanChan */ = {
+			isa = PBXGroup;
+			children = (
+				B0A513C7283635C500A05BB7 /* AppDelegate.swift */,
+				B0A513C9283635C500A05BB7 /* SceneDelegate.swift */,
+				B0A513CB283635C500A05BB7 /* ViewController.swift */,
+				B0A513CD283635C500A05BB7 /* Main.storyboard */,
+				B0A513D0283635C900A05BB7 /* Assets.xcassets */,
+				B0A513D2283635C900A05BB7 /* LaunchScreen.storyboard */,
+				B0A513D5283635C900A05BB7 /* Info.plist */,
+			);
+			path = OnlineBanChan;
+			sourceTree = "<group>";
+		};
+		B0A513DD283635C900A05BB7 /* OnlineBanChanTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0A513DE283635C900A05BB7 /* OnlineBanChanTests.swift */,
+			);
+			path = OnlineBanChanTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0A513C3283635C500A05BB7 /* OnlineBanChan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0A513EE283635C900A05BB7 /* Build configuration list for PBXNativeTarget "OnlineBanChan" */;
+			buildPhases = (
+				AA1CA24105B6F09D671DE9F4 /* [CP] Check Pods Manifest.lock */,
+				B0A513C0283635C500A05BB7 /* Sources */,
+				B0A513C1283635C500A05BB7 /* Frameworks */,
+				B0A513C2283635C500A05BB7 /* Resources */,
+				5EA1D7916C9431C50F3B6036 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OnlineBanChan;
+			productName = OnlineBanChan;
+			productReference = B0A513C4283635C500A05BB7 /* OnlineBanChan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0A513D9283635C900A05BB7 /* OnlineBanChanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0A513F1283635C900A05BB7 /* Build configuration list for PBXNativeTarget "OnlineBanChanTests" */;
+			buildPhases = (
+				0F1FCB8C996D903A147D14DE /* [CP] Check Pods Manifest.lock */,
+				B0A513D6283635C900A05BB7 /* Sources */,
+				B0A513D7283635C900A05BB7 /* Frameworks */,
+				B0A513D8283635C900A05BB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0A513DC283635C900A05BB7 /* PBXTargetDependency */,
+			);
+			name = OnlineBanChanTests;
+			productName = OnlineBanChanTests;
+			productReference = B0A513DA283635C900A05BB7 /* OnlineBanChanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B0A513E3283635C900A05BB7 /* OnlineBanChanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0A513F4283635C900A05BB7 /* Build configuration list for PBXNativeTarget "OnlineBanChanUITests" */;
+			buildPhases = (
+				B0A513E0283635C900A05BB7 /* Sources */,
+				B0A513E1283635C900A05BB7 /* Frameworks */,
+				B0A513E2283635C900A05BB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0A513E6283635C900A05BB7 /* PBXTargetDependency */,
+			);
+			name = OnlineBanChanUITests;
+			productName = OnlineBanChanUITests;
+			productReference = B0A513E4283635C900A05BB7 /* OnlineBanChanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0A513BC283635C500A05BB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					B0A513C3283635C500A05BB7 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					B0A513D9283635C900A05BB7 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = B0A513C3283635C500A05BB7;
+					};
+					B0A513E3283635C900A05BB7 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = B0A513C3283635C500A05BB7;
+					};
+				};
+			};
+			buildConfigurationList = B0A513BF283635C500A05BB7 /* Build configuration list for PBXProject "OnlineBanChan" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0A513BB283635C500A05BB7;
+			productRefGroup = B0A513C5283635C500A05BB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0A513C3283635C500A05BB7 /* OnlineBanChan */,
+				B0A513D9283635C900A05BB7 /* OnlineBanChanTests */,
+				B0A513E3283635C900A05BB7 /* OnlineBanChanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0A513C2283635C500A05BB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0A513D4283635C900A05BB7 /* LaunchScreen.storyboard in Resources */,
+				B0A513D1283635C900A05BB7 /* Assets.xcassets in Resources */,
+				B0A513CF283635C500A05BB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0A513D8283635C900A05BB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0A513E2283635C900A05BB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F1FCB8C996D903A147D14DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineBanChanTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EA1D7916C9431C50F3B6036 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineBanChan/Pods-OnlineBanChan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineBanChan/Pods-OnlineBanChan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineBanChan/Pods-OnlineBanChan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA1CA24105B6F09D671DE9F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineBanChan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0A513C0283635C500A05BB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0A513CC283635C500A05BB7 /* ViewController.swift in Sources */,
+				B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */,
+				B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0A513D6283635C900A05BB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0A513DF283635C900A05BB7 /* OnlineBanChanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0A513E0283635C900A05BB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0A513DC283635C900A05BB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0A513C3283635C500A05BB7 /* OnlineBanChan */;
+			targetProxy = B0A513DB283635C900A05BB7 /* PBXContainerItemProxy */;
+		};
+		B0A513E6283635C900A05BB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0A513C3283635C500A05BB7 /* OnlineBanChan */;
+			targetProxy = B0A513E5283635C900A05BB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0A513CD283635C500A05BB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0A513CE283635C500A05BB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0A513D2283635C900A05BB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0A513D3283635C900A05BB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0A513EC283635C900A05BB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0A513ED283635C900A05BB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0A513EF283635C900A05BB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D03836B94CB4668E5F1EAF4 /* Pods-OnlineBanChan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PSH4C5839A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OnlineBanChan/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dahun-Lee.OnlineBanChan";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0A513F0283635C900A05BB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3776518205C22A94AABA66D4 /* Pods-OnlineBanChan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PSH4C5839A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OnlineBanChan/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dahun-Lee.OnlineBanChan";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B0A513F2283635C900A05BB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E784938607981777040F64B /* Pods-OnlineBanChanTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PSH4C5839A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dahun-Lee.OnlineBanChanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnlineBanChan.app/OnlineBanChan";
+			};
+			name = Debug;
+		};
+		B0A513F3283635C900A05BB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F77B606348F9375530563440 /* Pods-OnlineBanChanTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PSH4C5839A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dahun-Lee.OnlineBanChanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnlineBanChan.app/OnlineBanChan";
+			};
+			name = Release;
+		};
+		B0A513F5283635C900A05BB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PSH4C5839A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dahun-Lee.OnlineBanChanUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OnlineBanChan;
+			};
+			name = Debug;
+		};
+		B0A513F6283635C900A05BB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PSH4C5839A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dahun-Lee.OnlineBanChanUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OnlineBanChan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0A513BF283635C500A05BB7 /* Build configuration list for PBXProject "OnlineBanChan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0A513EC283635C900A05BB7 /* Debug */,
+				B0A513ED283635C900A05BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0A513EE283635C900A05BB7 /* Build configuration list for PBXNativeTarget "OnlineBanChan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0A513EF283635C900A05BB7 /* Debug */,
+				B0A513F0283635C900A05BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0A513F1283635C900A05BB7 /* Build configuration list for PBXNativeTarget "OnlineBanChanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0A513F2283635C900A05BB7 /* Debug */,
+				B0A513F3283635C900A05BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0A513F4283635C900A05BB7 /* Build configuration list for PBXNativeTarget "OnlineBanChanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0A513F5283635C900A05BB7 /* Debug */,
+				B0A513F6283635C900A05BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0A513BC283635C500A05BB7 /* Project object */;
+}

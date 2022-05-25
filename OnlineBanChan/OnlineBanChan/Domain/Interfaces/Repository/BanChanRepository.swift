@@ -8,6 +8,6 @@
 import Foundation
 import RxSwift
 
-protocol BanChanRepository {
+protocol BanChanRepository: Repository {
     func fetchDishList() -> Observable<[MainSection]>
 }

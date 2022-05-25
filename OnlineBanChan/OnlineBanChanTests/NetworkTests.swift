@@ -8,6 +8,7 @@
 import XCTest
 @testable import OnlineBanChan
 import RxSwift
+import RxBlocking
 
 class NetworkTests: XCTestCase {
     var sut : NetworkService!
@@ -32,7 +33,7 @@ class NetworkTests: XCTestCase {
         
     }
     
-    func testDecodeWholeResponse() {
+    func testDecodeWholeResponseWithMockingNetwork() {
         
         let testRequester = MockNetworkRequester
             .init(response: nil,
@@ -49,15 +50,16 @@ class NetworkTests: XCTestCase {
         
         data.subscribe({ response in
                 
-                switch response {
-                case .next(let decoded) :
-                    XCTAssertEqual(whatIWant, decoded)
-                    expect.fulfill()
-                case .error :
-                    XCTFail()
-                case .completed:
-                    sleep(1)
-                }
+            switch response {
+            case .next(let decoded) :
+                XCTAssertEqual(whatIWant, decoded)
+                expect.fulfill()
+            case .error(let error) :
+                XCTFail("\(error)")
+            case .completed:
+                sleep(0)
+            }
+            
         })
         .disposed(by: disposeBag)
         
@@ -66,7 +68,7 @@ class NetworkTests: XCTestCase {
     }
     
     func testRealConnectWithWholeResponse() {
-        let expect = expectation(description: "testDecodeWholeResponse waiting 3sec")
+        let expect = expectation(description: "testRealConnectWithWholeResponse waiting 3sec")
         
         sut = DefaultNetworkService.init()
         let data: Observable<WholeResponse> = sut.request(with: APIEndPoint.getSectionsEndPoint())
@@ -75,16 +77,31 @@ class NetworkTests: XCTestCase {
             switch response {
             case .next(let wholeResponse) :
                 XCTAssertEqual(wholeResponse.statusCode, 200)
-                expect.fulfill()
             case .error(_):
                 XCTFail()
             case .completed:
                 sleep(1)
             }
+            expect.fulfill()
         })
         .disposed(by: disposeBag)
         
         wait(for: [expect], timeout: 3)
+    }
+    
+    func testFetchImage() {
+        sut = DefaultNetworkService.init()
+        
+        let expect = expectation(description: "testFetchImage waiting 5sec")
+        
+        let data: Observable<Data?> = sut.request(with:  "https://public.codesquad.kr/jk/storeapp/data/main/739_ZIP_P__T.jpg")
+            
+        expect.fulfill()
+        let result = try? data.toBlocking().single()
+        
+        XCTAssertNotNil(result, "@FAIL@ \(String(describing: result))")
+            
+        wait(for: [expect], timeout: 5)
     }
 
 }

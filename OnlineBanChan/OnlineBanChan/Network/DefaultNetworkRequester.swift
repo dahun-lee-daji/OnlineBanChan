@@ -11,6 +11,7 @@ import RxSwift
 
 protocol NetworkRequesting {
     func get<T: Codable>(url: URLConvertible, session: Session) -> Observable<T>
+    func getWithoutDecode(url: URLConvertible, session: Session) -> Observable<Data?>
 }
 
 class DefaultNetworkRequester: NetworkRequesting {
@@ -45,4 +46,28 @@ class DefaultNetworkRequester: NetworkRequesting {
         })
     }
 
+    func getWithoutDecode(url: URLConvertible, session: Session) -> Observable<Data?> {
+        return Observable.create({ observer in
+            let dataRequester = session.request(url)
+            
+            dataRequester
+                .validate()
+                .response(completionHandler: {
+                    response in
+                    
+                    switch response.result {
+                    case .success(let data) :
+                        observer.onNext(data)
+                    case .failure(let error) :
+                        observer.onError(error)
+                    }
+                    observer.onCompleted()
+                })
+                
+            return Disposables.create {
+                
+                dataRequester.cancel()
+            }
+        })
+    }
 }

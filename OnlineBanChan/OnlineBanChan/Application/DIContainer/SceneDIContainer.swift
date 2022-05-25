@@ -20,7 +20,11 @@ class SceneDIContainer {
     }
     
     // MARK: - Repositories
-    func makeMoviesRepository() -> BanChanRepository {
+    func makeBanChanRepository() -> BanChanRepository {
         return DefaultBanChanRepository(networkService: dependencies.apiNetworkService)
+    }
+    
+    func makeFoodImagesRepository() -> FoodImagesRepository {
+        return DefaultFoodImagesRepository(networkService: dependencies.apiNetworkService)
     }
 }

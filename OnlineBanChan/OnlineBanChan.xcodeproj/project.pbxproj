@@ -18,6 +18,9 @@
 		B0A04F14283E782D001F52AA /* BanChanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F13283E782D001F52AA /* BanChanRepository.swift */; };
 		B0A04F16283E78E0001F52AA /* DefaultBanChanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */; };
 		B0A04F18283E8070001F52AA /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F17283E8070001F52AA /* RepositoryTests.swift */; };
+		B0A04F1F283E9CDD001F52AA /* FoodImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F1E283E9CDD001F52AA /* FoodImagesRepository.swift */; };
+		B0A04F21283E9D12001F52AA /* DefaultFoodImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F20283E9D12001F52AA /* DefaultFoodImagesRepository.swift */; };
+		B0A04F23283E9EAE001F52AA /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F22283E9EAE001F52AA /* Repository.swift */; };
 		B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513C7283635C500A05BB7 /* AppDelegate.swift */; };
 		B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513C9283635C500A05BB7 /* SceneDelegate.swift */; };
 		B0A513CC283635C500A05BB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513CB283635C500A05BB7 /* ViewController.swift */; };
@@ -56,6 +59,9 @@
 		B0A04F13283E782D001F52AA /* BanChanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChanRepository.swift; sourceTree = "<group>"; };
 		B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBanChanRepository.swift; sourceTree = "<group>"; };
 		B0A04F17283E8070001F52AA /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		B0A04F1E283E9CDD001F52AA /* FoodImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodImagesRepository.swift; sourceTree = "<group>"; };
+		B0A04F20283E9D12001F52AA /* DefaultFoodImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFoodImagesRepository.swift; sourceTree = "<group>"; };
+		B0A04F22283E9EAE001F52AA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B0A513C4283635C500A05BB7 /* OnlineBanChan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineBanChan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A513C7283635C500A05BB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0A513C9283635C500A05BB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */,
+				B0A04F20283E9D12001F52AA /* DefaultFoodImagesRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -169,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				B0A04F13283E782D001F52AA /* BanChanRepository.swift */,
+				B0A04F1E283E9CDD001F52AA /* FoodImagesRepository.swift */,
+				B0A04F22283E9EAE001F52AA /* Repository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -455,8 +464,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0A04F1F283E9CDD001F52AA /* FoodImagesRepository.swift in Sources */,
 				B031A4752837B227003FC5EE /* SectionCardItem.swift in Sources */,
+				B0A04F23283E9EAE001F52AA /* Repository.swift in Sources */,
 				B0A04F10283E68FE001F52AA /* APIEndPoint.swift in Sources */,
+				B0A04F21283E9D12001F52AA /* DefaultFoodImagesRepository.swift in Sources */,
 				B0A513CC283635C500A05BB7 /* ViewController.swift in Sources */,
 				B031A47E2837BD0B003FC5EE /* WholeResponse.swift in Sources */,
 				B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */,

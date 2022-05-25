@@ -7,10 +7,12 @@
 
 import XCTest
 @testable import OnlineBanChan
+import RxSwift
 
 class NetworkTests: XCTestCase {
     var sut : NetworkService!
     var dataCreater: MockDataCreater!
+    var disposeBag = DisposeBag()
     
     override func setUpWithError() throws {
         dataCreater = MockDataCreater.init()
@@ -38,12 +40,12 @@ class NetworkTests: XCTestCase {
     
     func testDecodeWholeResponse() {
         let whatIWant = dataCreater.testWholeResponse
-        let expect = expectation(description: "testDecodeWholeResponse waiting 5sec")
+        let expect = expectation(description: "testDecodeWholeResponse waiting 3sec")
         sut.getSections()
             .single()
-            .subscribe({ so in
+            .subscribe({ response in
                 
-                switch so {
+                switch response {
                 case .next(let decoded) :
                     XCTAssertEqual(whatIWant, decoded)
                     expect.fulfill()
@@ -52,15 +54,32 @@ class NetworkTests: XCTestCase {
                 case .completed:
                     sleep(1)
                 }
-                
             })
+            .disposed(by: disposeBag)
         
-        wait(for: [expect], timeout: 5)
+        wait(for: [expect], timeout: 3)
         
     }
     
-    func testRealConnectWholeResponse() {
+    func testRealConnectWithWholeResponse() {
+        let expect = expectation(description: "testDecodeWholeResponse waiting 3sec")
         
+        sut = .init()
+        sut.getSections()
+            .subscribe({ response in
+                switch response {
+                case .next(let wholeResponse) :
+                    XCTAssertEqual(wholeResponse.statusCode, 200)
+                    expect.fulfill()
+                case .error(_):
+                    XCTFail()
+                case .completed:
+                    sleep(1)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        wait(for: [expect], timeout: 3)
     }
 
 }

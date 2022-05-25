@@ -50,36 +50,3 @@ struct MockNetworkRequester: NetworkRequesting {
     
     
 }
-
-//    class MockNetworkService: NetworkRequesting {
-//        func get<T: Codable>(endPoint: EndPoint, session: Session) -> Observable<T> {
-//
-//            return Observable.create({ observer in
-//
-//                guard let url : URLConvertible = try? endPoint.asURL() else {
-//                    observer.onError(NetworkErrors.invalidURL)
-//                    return Disposables.create()
-//                }
-//
-//                let dataRequester = session.request(url)
-//
-//                dataRequester
-//                    .response(completionHandler: { response in
-//                        switch response.result {
-//                        case .success(let data):
-//                            observer.onNext(data)
-//                        case .failure(let error):
-//                            observer.onError(error)
-//                        }
-//                        observer.onCompleted()
-//                    })
-//
-//                return Disposables.create {
-//                    dataRequester.cancel()
-//                }
-//            })
-//        }
-//
-//
-//
-//    }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12064BE5E0329571B56356E2 /* libPods-OnlineBanChanTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2940196FB788FE83AC5B5487 /* libPods-OnlineBanChanTests.a */; };
 		465C36FA9253C093D139C1EF /* Pods_OnlineBanChan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103AEC8358290200A944D75 /* Pods_OnlineBanChan.framework */; };
 		B031A4742837B227003FC5EE /* MainSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4722837B227003FC5EE /* MainSection.swift */; };
 		B031A4752837B227003FC5EE /* SectionCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4732837B227003FC5EE /* SectionCardItem.swift */; };
@@ -25,6 +24,7 @@
 		B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F012838DF08009F68F6 /* NetworkTests.swift */; };
 		B0CC7F052838EE36009F68F6 /* MockNetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F042838EE36009F68F6 /* MockNetworkRequester.swift */; };
 		B0CC7F072838F8AA009F68F6 /* MockDataCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F062838F8AA009F68F6 /* MockDataCreater.swift */; };
+		D6A612D49107AB38FF167DDC /* Pods_OnlineBanChanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399032F995E601EC8B76B1CF /* Pods_OnlineBanChanTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,8 @@
 
 /* Begin PBXFileReference section */
 		0103AEC8358290200A944D75 /* Pods_OnlineBanChan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineBanChan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2940196FB788FE83AC5B5487 /* libPods-OnlineBanChanTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OnlineBanChanTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3776518205C22A94AABA66D4 /* Pods-OnlineBanChan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChan.release.xcconfig"; path = "Target Support Files/Pods-OnlineBanChan/Pods-OnlineBanChan.release.xcconfig"; sourceTree = "<group>"; };
+		399032F995E601EC8B76B1CF /* Pods_OnlineBanChanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineBanChanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D03836B94CB4668E5F1EAF4 /* Pods-OnlineBanChan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChan.debug.xcconfig"; path = "Target Support Files/Pods-OnlineBanChan/Pods-OnlineBanChan.debug.xcconfig"; sourceTree = "<group>"; };
 		6E784938607981777040F64B /* Pods-OnlineBanChanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChanTests.debug.xcconfig"; path = "Target Support Files/Pods-OnlineBanChanTests/Pods-OnlineBanChanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B031A4722837B227003FC5EE /* MainSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSection.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12064BE5E0329571B56356E2 /* libPods-OnlineBanChanTests.a in Frameworks */,
+				D6A612D49107AB38FF167DDC /* Pods_OnlineBanChanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0103AEC8358290200A944D75 /* Pods_OnlineBanChan.framework */,
-				2940196FB788FE83AC5B5487 /* libPods-OnlineBanChanTests.a */,
+				399032F995E601EC8B76B1CF /* Pods_OnlineBanChanTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -258,6 +258,7 @@
 				B0A513D6283635C900A05BB7 /* Sources */,
 				B0A513D7283635C900A05BB7 /* Frameworks */,
 				B0A513D8283635C900A05BB7 /* Resources */,
+				AD3A117F2D6DE231C028C32A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -387,6 +388,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD3A117F2D6DE231C028C32A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineBanChanTests/Pods-OnlineBanChanTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineBanChanTests/Pods-OnlineBanChanTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineBanChanTests/Pods-OnlineBanChanTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -15,7 +15,7 @@ target 'OnlineBanChan' do
 end
 
 target 'OnlineBanChanTests' do
-  inherit! :search_paths
+  use_frameworks!
   # Pods for testing
   pod 'RxSwift'
   pod 'Alamofire'

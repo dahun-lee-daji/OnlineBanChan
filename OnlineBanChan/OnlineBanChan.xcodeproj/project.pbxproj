@@ -18,6 +18,8 @@
 		B0A04F14283E782D001F52AA /* BanChanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F13283E782D001F52AA /* BanChanRepository.swift */; };
 		B0A04F16283E78E0001F52AA /* DefaultBanChanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */; };
 		B0A04F18283E8070001F52AA /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F17283E8070001F52AA /* RepositoryTests.swift */; };
+		B0A04F1B283E86E7001F52AA /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F1A283E86E7001F52AA /* AppDIContainer.swift */; };
+		B0A04F1D283E87AC001F52AA /* SceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F1C283E87AC001F52AA /* SceneDIContainer.swift */; };
 		B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513C7283635C500A05BB7 /* AppDelegate.swift */; };
 		B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513C9283635C500A05BB7 /* SceneDelegate.swift */; };
 		B0A513CC283635C500A05BB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513CB283635C500A05BB7 /* ViewController.swift */; };
@@ -56,6 +58,8 @@
 		B0A04F13283E782D001F52AA /* BanChanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChanRepository.swift; sourceTree = "<group>"; };
 		B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBanChanRepository.swift; sourceTree = "<group>"; };
 		B0A04F17283E8070001F52AA /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		B0A04F1A283E86E7001F52AA /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		B0A04F1C283E87AC001F52AA /* SceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDIContainer.swift; sourceTree = "<group>"; };
 		B0A513C4283635C500A05BB7 /* OnlineBanChan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineBanChan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A513C7283635C500A05BB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0A513C9283635C500A05BB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		B0A04F19283E86D4001F52AA /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				B0A04F1A283E86E7001F52AA /* AppDIContainer.swift */,
+				B0A04F1C283E87AC001F52AA /* SceneDIContainer.swift */,
+			);
+			path = DIContainer;
+			sourceTree = "<group>";
+		};
 		B0A513BB283635C500A05BB7 = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +232,7 @@
 		B0A513F728364A4900A05BB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B0A04F19283E86D4001F52AA /* DIContainer */,
 				B0A513C7283635C500A05BB7 /* AppDelegate.swift */,
 				B0A513C9283635C500A05BB7 /* SceneDelegate.swift */,
 			);
@@ -458,12 +472,14 @@
 				B031A4752837B227003FC5EE /* SectionCardItem.swift in Sources */,
 				B0A04F10283E68FE001F52AA /* APIEndPoint.swift in Sources */,
 				B0A513CC283635C500A05BB7 /* ViewController.swift in Sources */,
+				B0A04F1D283E87AC001F52AA /* SceneDIContainer.swift in Sources */,
 				B031A47E2837BD0B003FC5EE /* WholeResponse.swift in Sources */,
 				B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */,
 				B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */,
 				B031A4742837B227003FC5EE /* MainSection.swift in Sources */,
 				B031A47A2837B231003FC5EE /* DefaultNetworkService.swift in Sources */,
 				B0A04F14283E782D001F52AA /* BanChanRepository.swift in Sources */,
+				B0A04F1B283E86E7001F52AA /* AppDIContainer.swift in Sources */,
 				B0A04F16283E78E0001F52AA /* DefaultBanChanRepository.swift in Sources */,
 				B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */,
 				B031A47B2837B231003FC5EE /* DefaultNetworkRequester.swift in Sources */,

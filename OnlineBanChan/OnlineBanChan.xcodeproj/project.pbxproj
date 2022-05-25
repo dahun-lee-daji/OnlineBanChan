@@ -10,17 +10,20 @@
 		465C36FA9253C093D139C1EF /* Pods_OnlineBanChan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103AEC8358290200A944D75 /* Pods_OnlineBanChan.framework */; };
 		B031A4742837B227003FC5EE /* MainSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4722837B227003FC5EE /* MainSection.swift */; };
 		B031A4752837B227003FC5EE /* SectionCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4732837B227003FC5EE /* SectionCardItem.swift */; };
-		B031A47A2837B231003FC5EE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4772837B231003FC5EE /* NetworkService.swift */; };
-		B031A47B2837B231003FC5EE /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4782837B231003FC5EE /* NetworkRequester.swift */; };
+		B031A47A2837B231003FC5EE /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4772837B231003FC5EE /* DefaultNetworkService.swift */; };
+		B031A47B2837B231003FC5EE /* DefaultNetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4782837B231003FC5EE /* DefaultNetworkRequester.swift */; };
 		B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4792837B231003FC5EE /* EndPoint.swift */; };
 		B031A47E2837BD0B003FC5EE /* WholeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A47D2837BD0B003FC5EE /* WholeResponse.swift */; };
+		B0A04F10283E68FE001F52AA /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F0F283E68FE001F52AA /* APIEndPoint.swift */; };
+		B0A04F14283E782D001F52AA /* BanChanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F13283E782D001F52AA /* BanChanRepository.swift */; };
+		B0A04F16283E78E0001F52AA /* DefaultBanChanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */; };
+		B0A04F18283E8070001F52AA /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F17283E8070001F52AA /* RepositoryTests.swift */; };
 		B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513C7283635C500A05BB7 /* AppDelegate.swift */; };
 		B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513C9283635C500A05BB7 /* SceneDelegate.swift */; };
 		B0A513CC283635C500A05BB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513CB283635C500A05BB7 /* ViewController.swift */; };
 		B0A513CF283635C500A05BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A513CD283635C500A05BB7 /* Main.storyboard */; };
 		B0A513D1283635C900A05BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A513D0283635C900A05BB7 /* Assets.xcassets */; };
 		B0A513D4283635C900A05BB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A513D2283635C900A05BB7 /* LaunchScreen.storyboard */; };
-		B0A513DF283635C900A05BB7 /* OnlineBanChanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A513DE283635C900A05BB7 /* OnlineBanChanTests.swift */; };
 		B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F012838DF08009F68F6 /* NetworkTests.swift */; };
 		B0CC7F052838EE36009F68F6 /* MockNetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F042838EE36009F68F6 /* MockNetworkRequester.swift */; };
 		B0CC7F072838F8AA009F68F6 /* MockDataCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F062838F8AA009F68F6 /* MockDataCreater.swift */; };
@@ -45,10 +48,14 @@
 		6E784938607981777040F64B /* Pods-OnlineBanChanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChanTests.debug.xcconfig"; path = "Target Support Files/Pods-OnlineBanChanTests/Pods-OnlineBanChanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B031A4722837B227003FC5EE /* MainSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSection.swift; sourceTree = "<group>"; };
 		B031A4732837B227003FC5EE /* SectionCardItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCardItem.swift; sourceTree = "<group>"; };
-		B031A4772837B231003FC5EE /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		B031A4782837B231003FC5EE /* NetworkRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
+		B031A4772837B231003FC5EE /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
+		B031A4782837B231003FC5EE /* DefaultNetworkRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkRequester.swift; sourceTree = "<group>"; };
 		B031A4792837B231003FC5EE /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		B031A47D2837BD0B003FC5EE /* WholeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeResponse.swift; sourceTree = "<group>"; };
+		B0A04F0F283E68FE001F52AA /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
+		B0A04F13283E782D001F52AA /* BanChanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChanRepository.swift; sourceTree = "<group>"; };
+		B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBanChanRepository.swift; sourceTree = "<group>"; };
+		B0A04F17283E8070001F52AA /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		B0A513C4283635C500A05BB7 /* OnlineBanChan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineBanChan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A513C7283635C500A05BB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0A513C9283635C500A05BB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +65,6 @@
 		B0A513D3283635C900A05BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0A513D5283635C900A05BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A513DA283635C900A05BB7 /* OnlineBanChanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineBanChanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0A513DE283635C900A05BB7 /* OnlineBanChanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineBanChanTests.swift; sourceTree = "<group>"; };
 		B0CC7F012838DF08009F68F6 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		B0CC7F042838EE36009F68F6 /* MockNetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequester.swift; sourceTree = "<group>"; };
 		B0CC7F062838F8AA009F68F6 /* MockDataCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataCreater.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 		B031A4702837B227003FC5EE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B0A04F11283E77F8001F52AA /* Interfaces */,
 				B031A4712837B227003FC5EE /* Entity */,
 			);
 			path = Domain;
@@ -115,8 +122,8 @@
 		B031A4762837B231003FC5EE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B031A4772837B231003FC5EE /* NetworkService.swift */,
-				B031A4782837B231003FC5EE /* NetworkRequester.swift */,
+				B031A4772837B231003FC5EE /* DefaultNetworkService.swift */,
+				B031A4782837B231003FC5EE /* DefaultNetworkRequester.swift */,
 				B031A4792837B231003FC5EE /* EndPoint.swift */,
 			);
 			path = Network;
@@ -131,6 +138,39 @@
 				F77B606348F9375530563440 /* Pods-OnlineBanChanTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B0A04F0D283E6886001F52AA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B0A04F0E283E68E1001F52AA /* Repository */,
+				B0A04F0F283E68FE001F52AA /* APIEndPoint.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B0A04F0E283E68E1001F52AA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B0A04F11283E77F8001F52AA /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				B0A04F12283E7811001F52AA /* Repository */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		B0A04F12283E7811001F52AA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B0A04F13283E782D001F52AA /* BanChanRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		B0A513BB283635C500A05BB7 = {
@@ -156,6 +196,7 @@
 		B0A513C6283635C500A05BB7 /* OnlineBanChan */ = {
 			isa = PBXGroup;
 			children = (
+				B0A04F0D283E6886001F52AA /* Data */,
 				B031A4762837B231003FC5EE /* Network */,
 				B031A4702837B227003FC5EE /* Domain */,
 				B0A513F928364A9900A05BB7 /* Presentation */,
@@ -169,8 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				B0CC7F032838EE27009F68F6 /* Mock */,
-				B0A513DE283635C900A05BB7 /* OnlineBanChanTests.swift */,
 				B0CC7F012838DF08009F68F6 /* NetworkTests.swift */,
+				B0A04F17283E8070001F52AA /* RepositoryTests.swift */,
 			);
 			path = OnlineBanChanTests;
 			sourceTree = "<group>";
@@ -415,14 +456,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B031A4752837B227003FC5EE /* SectionCardItem.swift in Sources */,
+				B0A04F10283E68FE001F52AA /* APIEndPoint.swift in Sources */,
 				B0A513CC283635C500A05BB7 /* ViewController.swift in Sources */,
 				B031A47E2837BD0B003FC5EE /* WholeResponse.swift in Sources */,
 				B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */,
 				B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */,
 				B031A4742837B227003FC5EE /* MainSection.swift in Sources */,
-				B031A47A2837B231003FC5EE /* NetworkService.swift in Sources */,
+				B031A47A2837B231003FC5EE /* DefaultNetworkService.swift in Sources */,
+				B0A04F14283E782D001F52AA /* BanChanRepository.swift in Sources */,
+				B0A04F16283E78E0001F52AA /* DefaultBanChanRepository.swift in Sources */,
 				B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */,
-				B031A47B2837B231003FC5EE /* NetworkRequester.swift in Sources */,
+				B031A47B2837B231003FC5EE /* DefaultNetworkRequester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +477,7 @@
 				B0CC7F052838EE36009F68F6 /* MockNetworkRequester.swift in Sources */,
 				B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */,
 				B0CC7F072838F8AA009F68F6 /* MockDataCreater.swift in Sources */,
-				B0A513DF283635C900A05BB7 /* OnlineBanChanTests.swift in Sources */,
+				B0A04F18283E8070001F52AA /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ struct MockNetworkRequester: NetworkRequesting {
     let data: Data?
     let error: Error?
     
-    func get<T>(endPoint: EndPoint, session: Session) -> Observable<T> where T : Decodable, T : Encodable {
+    func get<T>(url: URLConvertible, session: Session) -> Observable<T> where T : Decodable, T : Encodable {
         return Observable.create({ observer in
             
             sleep(1)

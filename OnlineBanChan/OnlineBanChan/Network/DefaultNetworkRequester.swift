@@ -10,19 +10,14 @@ import Alamofire
 import RxSwift
 
 protocol NetworkRequesting {
-    func get<T: Codable>(endPoint: EndPoint, session: Session) -> Observable<T>
+    func get<T: Codable>(url: URLConvertible, session: Session) -> Observable<T>
 }
 
-class NetworkRequester: NetworkRequesting {
+class DefaultNetworkRequester: NetworkRequesting {
     
-    func get<T: Codable>(endPoint: EndPoint, session: Session) -> Observable<T> {
+    func get<T: Codable>(url: URLConvertible, session: Session) -> Observable<T> {
         
         return Observable.create({ observer in
-            
-            guard let url : URLConvertible = try? endPoint.asURL() else {
-                observer.onError(NetworkErrors.invalidURL)
-                return Disposables.create()
-            }
             
             let dataRequester = session.request(url)
             

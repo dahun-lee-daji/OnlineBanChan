@@ -17,6 +17,4 @@ extension WholeResponse: Equatable {
         lhs.statusCode == rhs.statusCode &&
         lhs.body == rhs.body
     }
-    
-    
 }

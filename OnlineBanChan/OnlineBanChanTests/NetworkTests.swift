@@ -16,17 +16,11 @@ class NetworkTests: XCTestCase {
     
     override func setUpWithError() throws {
         dataCreater = MockDataCreater.init()
-        
-        let testRequester = MockNetworkRequester
-            .init(response: nil,
-                  data: dataCreater.makeWholeResponseData(),
-                  error: nil)
-        
-        sut = .init(requester: testRequester)
     }
     
     func testCreateURL() {
-        let testEndpoint = EndPoint.init(apiPath: .sections, httpMethod: .get)
+        
+        let testEndpoint = APIEndPoint.getSectionsEndPoint()
         let answer = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/best"
         
         do {
@@ -39,11 +33,21 @@ class NetworkTests: XCTestCase {
     }
     
     func testDecodeWholeResponse() {
+        
+        let testRequester = MockNetworkRequester
+            .init(response: nil,
+                  data: dataCreater.makeWholeResponseData(),
+                  error: nil)
+        
+        sut = DefaultNetworkService.init(requester: testRequester)
+        
         let whatIWant = dataCreater.testWholeResponse
         let expect = expectation(description: "testDecodeWholeResponse waiting 3sec")
-        sut.getSections()
-            .single()
-            .subscribe({ response in
+        
+        
+        let data: Observable<WholeResponse> = sut.request(with: APIEndPoint.getSectionsEndPoint())
+        
+        data.subscribe({ response in
                 
                 switch response {
                 case .next(let decoded) :
@@ -54,8 +58,8 @@ class NetworkTests: XCTestCase {
                 case .completed:
                     sleep(1)
                 }
-            })
-            .disposed(by: disposeBag)
+        })
+        .disposed(by: disposeBag)
         
         wait(for: [expect], timeout: 3)
         
@@ -64,20 +68,21 @@ class NetworkTests: XCTestCase {
     func testRealConnectWithWholeResponse() {
         let expect = expectation(description: "testDecodeWholeResponse waiting 3sec")
         
-        sut = .init()
-        sut.getSections()
-            .subscribe({ response in
-                switch response {
-                case .next(let wholeResponse) :
-                    XCTAssertEqual(wholeResponse.statusCode, 200)
-                    expect.fulfill()
-                case .error(_):
-                    XCTFail()
-                case .completed:
-                    sleep(1)
-                }
-            })
-            .disposed(by: disposeBag)
+        sut = DefaultNetworkService.init()
+        let data: Observable<WholeResponse> = sut.request(with: APIEndPoint.getSectionsEndPoint())
+        
+        data.subscribe({ response in
+            switch response {
+            case .next(let wholeResponse) :
+                XCTAssertEqual(wholeResponse.statusCode, 200)
+                expect.fulfill()
+            case .error(_):
+                XCTFail()
+            case .completed:
+                sleep(1)
+            }
+        })
+        .disposed(by: disposeBag)
         
         wait(for: [expect], timeout: 3)
     }

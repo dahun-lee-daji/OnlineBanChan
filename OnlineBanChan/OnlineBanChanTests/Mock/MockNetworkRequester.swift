@@ -48,5 +48,8 @@ struct MockNetworkRequester: NetworkRequesting {
         })
     }
     
+    func getWithoutDecode(url: URLConvertible, session: Session) -> Observable<Data?> {
+        return Observable.just(data)
+    }
     
 }

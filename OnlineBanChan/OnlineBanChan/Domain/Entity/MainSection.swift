@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct MainSection: Codable {
     let categoryId: String
     let name: String
-    let items: [SectionCardItem]
+    var items: [SectionCardItem]
 }
 
 extension MainSection {
@@ -27,5 +28,17 @@ extension MainSection: Equatable {
         lhs.name == rhs.name &&
         lhs.items == rhs.items
     }
-    
+}
+extension MainSection: IdentifiableType {
+    var identity: String {
+        return categoryId
+    }
+}
+
+extension MainSection: AnimatableSectionModelType {
+    init(original: MainSection, items: [SectionCardItem]) {
+        self = original
+        self.items = items
+    }
+
 }

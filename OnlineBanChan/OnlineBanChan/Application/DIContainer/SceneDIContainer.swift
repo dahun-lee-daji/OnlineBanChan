@@ -37,7 +37,7 @@ class SceneDIContainer {
     // MARK: - MainFoodView
     
     func makeMainFoodUseCase() -> MainFoodUseCase {
-        return DefaultMainFoodUseCase.init()
+        return DefaultMainFoodUseCase.init(banchanRepository: makeBanChanRepository(), foodImageRepository: makeFoodImagesRepository())
         }
     
     func makeMainFoodViewModel(action: MainFoodViewModelActions) -> MainFoodViewModel {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct SectionCardItem: Codable {
     let detailHashId: String
@@ -30,6 +31,10 @@ extension SectionCardItem {
     }
 }
 
-extension SectionCardItem: Equatable {
-    
+extension SectionCardItem: IdentifiableType {
+    var identity: String {
+        return detailHashId
+    }
 }
+
+extension SectionCardItem: Hashable {}

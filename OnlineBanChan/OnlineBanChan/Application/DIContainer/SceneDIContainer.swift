@@ -5,7 +5,7 @@
 //  Created by 이다훈 on 2022/05/26.
 //
 
-import Foundation
+import UIKit
 
 class SceneDIContainer {
     
@@ -27,4 +27,28 @@ class SceneDIContainer {
     func makeFoodImagesRepository() -> FoodImagesRepository {
         return DefaultFoodImagesRepository(networkService: dependencies.apiNetworkService)
     }
+    
+    // MARK: - FlowCoordinator
+    
+    func makeMainFoodViewFlowCoordinator(navigationController: UINavigationController) -> MainFoodViewFlowCoordinator {
+        return MainFoodViewFlowCoordinator.init(navigationController: navigationController, dependencies: self)
+    }
+    
+    // MARK: - MainFoodView
+    
+    func makeMainFoodUseCase() -> MainFoodUseCase {
+        return DefaultMainFoodUseCase.init()
+        }
+    
+    func makeMainFoodViewModel(action: MainFoodViewModelActions) -> MainFoodViewModel {
+        return DefaultMainFoodViewModel.init(mainFoodUseCase: makeMainFoodUseCase(), actions: action)
+    }
+    
+    func makeMainFoodViewController(actions: MainFoodViewModelActions) -> MainFoodViewController {
+        return  MainFoodViewController
+            .create(with: makeMainFoodViewModel(action: actions),
+                    banchanRepository: makeBanChanRepository())
+    }
 }
+
+extension SceneDIContainer: MainFoodViewFlowCoordinatorDependencies {}

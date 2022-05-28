@@ -6,7 +6,23 @@
 //
 
 import UIKit
+import RxSwift
 
 class DetailFoodViewController: UIViewController, StoryboardInitiating {
     
+    var disposeBag = DisposeBag.init()
+    
+    private var viewModel: DetailFoodViewModel!
+    
+    // - MARK: LifeCyle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    static func create(with viewModel: DetailFoodViewModel) -> DetailFoodViewController {
+        let view = DetailFoodViewController.instantiateViewController()
+        view.viewModel = viewModel
+        return view
+    }
 }

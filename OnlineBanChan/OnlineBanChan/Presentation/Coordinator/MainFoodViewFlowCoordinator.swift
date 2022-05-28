@@ -16,8 +16,6 @@ class MainFoodViewFlowCoordinator {
     private weak var navigationController: UINavigationController?
     private let dependencies: MainFoodViewFlowCoordinatorDependencies
 
-    private weak var mainFoodVC: MainFoodViewController?
-
     init(navigationController: UINavigationController,
          dependencies: MainFoodViewFlowCoordinatorDependencies) {
         self.navigationController = navigationController
@@ -29,6 +27,11 @@ class MainFoodViewFlowCoordinator {
         let vc = dependencies.makeMainFoodViewController(actions: actions)
 
         navigationController?.pushViewController(vc, animated: false)
-        mainFoodVC = vc
+    }
+    
+    func pushDetailView() {
+        let actions = DetailFoodViewModelActions.init()
+        let vc = dependencies.makeDetailFoodViewController(action: actions)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

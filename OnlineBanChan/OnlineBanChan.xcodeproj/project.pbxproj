@@ -39,6 +39,8 @@
 		B0A513D4283635C900A05BB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A513D2283635C900A05BB7 /* LaunchScreen.storyboard */; };
 		B0B0596528421A72001F5981 /* FoodListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0596428421A72001F5981 /* FoodListHeader.swift */; };
 		B0B0596928422751001F5981 /* FoodListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B0596828422751001F5981 /* FoodListHeader.xib */; };
+		B0B10E26284269F100970155 /* DetailFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E25284269F100970155 /* DetailFoodViewModel.swift */; };
+		B0B10E2828426A8B00970155 /* DetailFoodUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */; };
 		B0B9AD4B28423D0000EA1D6A /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */; };
 		B0B9AD4D28423D5100EA1D6A /* DetailFoodViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */; };
 		B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F012838DF08009F68F6 /* NetworkTests.swift */; };
@@ -97,6 +99,8 @@
 		B0A513DA283635C900A05BB7 /* OnlineBanChanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineBanChanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0596428421A72001F5981 /* FoodListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListHeader.swift; sourceTree = "<group>"; };
 		B0B0596828422751001F5981 /* FoodListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodListHeader.xib; sourceTree = "<group>"; };
+		B0B10E25284269F100970155 /* DetailFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewModel.swift; sourceTree = "<group>"; };
+		B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodUseCase.swift; sourceTree = "<group>"; };
 		B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewController.swift; sourceTree = "<group>"; };
 		B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailFoodViewController.storyboard; sourceTree = "<group>"; };
 		B0CC7F012838DF08009F68F6 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				B0A04F30283F7051001F52AA /* MainFoodUseCase.swift */,
+				B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -358,9 +363,18 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
+		B0B10E24284269E200970155 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B0B10E25284269F100970155 /* DetailFoodViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B0B9AD4928423C8400EA1D6A /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				B0B10E24284269E200970155 /* ViewModel */,
 				B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */,
 				B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */,
 			);
@@ -565,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B10E26284269F100970155 /* DetailFoodViewModel.swift in Sources */,
 				B0A04F1F283E9CDD001F52AA /* FoodImagesRepository.swift in Sources */,
 				B031A4752837B227003FC5EE /* SectionCardItem.swift in Sources */,
 				B0A04F31283F7051001F52AA /* MainFoodUseCase.swift in Sources */,
@@ -578,6 +593,7 @@
 				B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */,
 				B0A04F39283FA4DD001F52AA /* NSObject+Extension.swift in Sources */,
 				B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */,
+				B0B10E2828426A8B00970155 /* DetailFoodUseCase.swift in Sources */,
 				B0A04F25283F65BE001F52AA /* AppFlowCoordinator.swift in Sources */,
 				B031A4742837B227003FC5EE /* MainSection.swift in Sources */,
 				B0A04F28283F692D001F52AA /* MainFoodViewFlowCoordinator.swift in Sources */,

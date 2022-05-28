@@ -21,7 +21,7 @@ protocol MainFoodViewModelInput {
 protocol MainFoodViewModelOutput {
     var sceneTitle: String {get}
     var mainSectionRelay: BehaviorRelay<[MainSection]> {get}
-    func dataSource() -> RxTableViewSectionedAnimatedDataSource<MainSection>
+    var dataSource: RxTableViewSectionedAnimatedDataSource<MainSection> {get}
 }
 
 protocol MainFoodViewModel: MainFoodViewModelInput, MainFoodViewModelOutput {}
@@ -29,7 +29,6 @@ protocol MainFoodViewModel: MainFoodViewModelInput, MainFoodViewModelOutput {}
 class DefaultMainFoodViewModel: MainFoodViewModel {
     
     private let disposeBag = DisposeBag()
-    
     private let mainFoodUseCase: MainFoodUseCase
     private let actions: MainFoodViewModelActions?
     
@@ -37,7 +36,8 @@ class DefaultMainFoodViewModel: MainFoodViewModel {
     
     let mainSectionRelay: BehaviorRelay<[MainSection]> = .init(value: [])
     let sceneTitle: String = "OnlineBanchan"
-    func dataSource() -> RxTableViewSectionedAnimatedDataSource<MainSection> {
+    var dataSource
+    : RxTableViewSectionedAnimatedDataSource<MainSection> {
         
         let dataSource = RxTableViewSectionedAnimatedDataSource<MainSection> {
             (dataSource, tableView, indexPath, sectionCardItem) -> UITableViewCell in
@@ -53,10 +53,6 @@ class DefaultMainFoodViewModel: MainFoodViewModel {
                       data: imageData)
             
             return cell
-        }
-        
-        dataSource.titleForHeaderInSection = { (dataSource, index) in
-            return dataSource.sectionModels[index].name
         }
         
         return dataSource

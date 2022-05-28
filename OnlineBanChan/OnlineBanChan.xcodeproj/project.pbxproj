@@ -37,6 +37,8 @@
 		B0A513CF283635C500A05BB7 /* MainFoodViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A513CD283635C500A05BB7 /* MainFoodViewController.storyboard */; };
 		B0A513D1283635C900A05BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A513D0283635C900A05BB7 /* Assets.xcassets */; };
 		B0A513D4283635C900A05BB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A513D2283635C900A05BB7 /* LaunchScreen.storyboard */; };
+		B0B0596528421A72001F5981 /* FoodListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0596428421A72001F5981 /* FoodListHeader.swift */; };
+		B0B0596928422751001F5981 /* FoodListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B0596828422751001F5981 /* FoodListHeader.xib */; };
 		B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F012838DF08009F68F6 /* NetworkTests.swift */; };
 		B0CC7F052838EE36009F68F6 /* MockNetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F042838EE36009F68F6 /* MockNetworkRequester.swift */; };
 		B0CC7F072838F8AA009F68F6 /* MockDataCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F062838F8AA009F68F6 /* MockDataCreater.swift */; };
@@ -91,6 +93,8 @@
 		B0A513D3283635C900A05BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0A513D5283635C900A05BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A513DA283635C900A05BB7 /* OnlineBanChanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineBanChanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B0596428421A72001F5981 /* FoodListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListHeader.swift; sourceTree = "<group>"; };
+		B0B0596828422751001F5981 /* FoodListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodListHeader.xib; sourceTree = "<group>"; };
 		B0CC7F012838DF08009F68F6 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		B0CC7F042838EE36009F68F6 /* MockNetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequester.swift; sourceTree = "<group>"; };
 		B0CC7F062838F8AA009F68F6 /* MockDataCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataCreater.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 			children = (
 				B0A04F34283F9EF7001F52AA /* FoodListItemCell.swift */,
 				B0A04F35283F9EF7001F52AA /* FoodListItemCell.xib */,
+				B0B0596428421A72001F5981 /* FoodListHeader.swift */,
+				B0B0596828422751001F5981 /* FoodListHeader.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 			files = (
 				B0A04F37283F9EF7001F52AA /* FoodListItemCell.xib in Resources */,
 				B0A513D4283635C900A05BB7 /* LaunchScreen.storyboard in Resources */,
+				B0B0596928422751001F5981 /* FoodListHeader.xib in Resources */,
 				B0A513D1283635C900A05BB7 /* Assets.xcassets in Resources */,
 				B0A513CF283635C500A05BB7 /* MainFoodViewController.storyboard in Resources */,
 			);
@@ -563,6 +570,7 @@
 				B0A04F14283E782D001F52AA /* BanChanRepository.swift in Sources */,
 				B0A04F1B283E86E7001F52AA /* AppDIContainer.swift in Sources */,
 				B0A04F16283E78E0001F52AA /* DefaultBanChanRepository.swift in Sources */,
+				B0B0596528421A72001F5981 /* FoodListHeader.swift in Sources */,
 				B0A04F36283F9EF7001F52AA /* FoodListItemCell.swift in Sources */,
 				B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */,
 				B0A04F2E283F6DCD001F52AA /* StoryboardInitiating.swift in Sources */,

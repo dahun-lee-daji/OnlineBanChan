@@ -27,10 +27,6 @@ class MainFoodViewController: UIViewController, StoryboardInitiating {
         bind()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     static func create(with viewModel: MainFoodViewModel) -> MainFoodViewController {
         let view = MainFoodViewController.instantiateViewController()
         view.viewModel = viewModel
@@ -46,14 +42,18 @@ class MainFoodViewController: UIViewController, StoryboardInitiating {
     private func bind() {
         viewModel.mainSectionRelay
             .bind(to: mainFoodTableView.rx
-                .items(dataSource: viewModel.dataSource())
+                .items(dataSource: viewModel.dataSource)
             )
             .disposed(by: disposeBag)
     }
     
     private func setTableViewCell() {
-        let myTableViewCellNib = UINib(nibName: FoodListItemCell.className, bundle: nil)
-        mainFoodTableView.register(myTableViewCellNib, forCellReuseIdentifier: FoodListItemCell.className)
+        let tableViewCellNib = UINib(nibName: FoodListItemCell.className, bundle: nil)
+        mainFoodTableView.register(tableViewCellNib, forCellReuseIdentifier: FoodListItemCell.className)
+        
+        let tableViewHeaderNib = UINib(nibName: FoodListHeader.className, bundle: nil)
+        mainFoodTableView.register(tableViewHeaderNib, forHeaderFooterViewReuseIdentifier: FoodListHeader.className)
+        
         mainFoodTableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
     }
@@ -63,5 +63,18 @@ class MainFoodViewController: UIViewController, StoryboardInitiating {
 extension MainFoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 45
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: FoodListHeader.className) as? FoodListHeader else {return UIView() }
+        
+        view.setTitle(text: viewModel.mainSectionRelay.value[section].name)
+        
+        return view
     }
 }

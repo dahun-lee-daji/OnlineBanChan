@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct WholeResponse: Codable {
+struct MainSectionsDTO: Codable {
     let statusCode: Int
     let body: [MainSection]
 }
 
-extension WholeResponse: Equatable {
-    static func == (lhs: WholeResponse, rhs: WholeResponse) -> Bool {
+extension MainSectionsDTO: Equatable {
+    static func == (lhs: MainSectionsDTO, rhs: MainSectionsDTO) -> Bool {
         lhs.statusCode == rhs.statusCode &&
         lhs.body == rhs.body
     }

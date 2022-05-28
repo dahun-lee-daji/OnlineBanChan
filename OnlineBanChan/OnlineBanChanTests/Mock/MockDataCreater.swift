@@ -11,7 +11,7 @@ import Foundation
 
 struct MockDataCreater {
     
-    let testWholeResponse: WholeResponse
+    let testWholeResponse: MainSectionsDTO
     let testMainSection: MainSection
     let testSectionCardItem: SectionCardItem
     
@@ -34,7 +34,7 @@ struct MockDataCreater {
                           items: [testSectionCardItemValue])
         
         let testWholeResponseValue =
-        WholeResponse.init(statusCode: 200,
+        MainSectionsDTO.init(statusCode: 200,
                            body: [testMainSectionsValue])
         
         self.testWholeResponse = testWholeResponseValue

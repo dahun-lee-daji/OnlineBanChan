@@ -13,7 +13,7 @@
 		B031A47A2837B231003FC5EE /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4772837B231003FC5EE /* DefaultNetworkService.swift */; };
 		B031A47B2837B231003FC5EE /* DefaultNetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4782837B231003FC5EE /* DefaultNetworkRequester.swift */; };
 		B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A4792837B231003FC5EE /* EndPoint.swift */; };
-		B031A47E2837BD0B003FC5EE /* WholeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A47D2837BD0B003FC5EE /* WholeResponse.swift */; };
+		B031A47E2837BD0B003FC5EE /* MainSectionsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031A47D2837BD0B003FC5EE /* MainSectionsDTO.swift */; };
 		B0A04F10283E68FE001F52AA /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F0F283E68FE001F52AA /* APIEndPoint.swift */; };
 		B0A04F14283E782D001F52AA /* BanChanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F13283E782D001F52AA /* BanChanRepository.swift */; };
 		B0A04F16283E78E0001F52AA /* DefaultBanChanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */; };
@@ -41,6 +41,7 @@
 		B0B0596928422751001F5981 /* FoodListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B0596828422751001F5981 /* FoodListHeader.xib */; };
 		B0B10E26284269F100970155 /* DetailFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E25284269F100970155 /* DetailFoodViewModel.swift */; };
 		B0B10E2828426A8B00970155 /* DetailFoodUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */; };
+		B0B10E2A28426D1C00970155 /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E2928426D1C00970155 /* FoodDetail.swift */; };
 		B0B9AD4B28423D0000EA1D6A /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */; };
 		B0B9AD4D28423D5100EA1D6A /* DetailFoodViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */; };
 		B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F012838DF08009F68F6 /* NetworkTests.swift */; };
@@ -70,7 +71,7 @@
 		B031A4772837B231003FC5EE /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
 		B031A4782837B231003FC5EE /* DefaultNetworkRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkRequester.swift; sourceTree = "<group>"; };
 		B031A4792837B231003FC5EE /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		B031A47D2837BD0B003FC5EE /* WholeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeResponse.swift; sourceTree = "<group>"; };
+		B031A47D2837BD0B003FC5EE /* MainSectionsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionsDTO.swift; sourceTree = "<group>"; };
 		B0A04F0F283E68FE001F52AA /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
 		B0A04F13283E782D001F52AA /* BanChanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChanRepository.swift; sourceTree = "<group>"; };
 		B0A04F15283E78E0001F52AA /* DefaultBanChanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBanChanRepository.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		B0B0596828422751001F5981 /* FoodListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodListHeader.xib; sourceTree = "<group>"; };
 		B0B10E25284269F100970155 /* DetailFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewModel.swift; sourceTree = "<group>"; };
 		B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodUseCase.swift; sourceTree = "<group>"; };
+		B0B10E2928426D1C00970155 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; };
 		B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewController.swift; sourceTree = "<group>"; };
 		B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailFoodViewController.storyboard; sourceTree = "<group>"; };
 		B0CC7F012838DF08009F68F6 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
@@ -151,9 +153,10 @@
 		B031A4712837B227003FC5EE /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				B031A47D2837BD0B003FC5EE /* WholeResponse.swift */,
+				B031A47D2837BD0B003FC5EE /* MainSectionsDTO.swift */,
 				B031A4722837B227003FC5EE /* MainSection.swift */,
 				B031A4732837B227003FC5EE /* SectionCardItem.swift */,
+				B0B10E2928426D1C00970155 /* FoodDetail.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -589,7 +592,7 @@
 				B0A04F21283E9D12001F52AA /* DefaultFoodImagesRepository.swift in Sources */,
 				B0A513CC283635C500A05BB7 /* MainFoodViewController.swift in Sources */,
 				B0A04F1D283E87AC001F52AA /* SceneDIContainer.swift in Sources */,
-				B031A47E2837BD0B003FC5EE /* WholeResponse.swift in Sources */,
+				B031A47E2837BD0B003FC5EE /* MainSectionsDTO.swift in Sources */,
 				B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */,
 				B0A04F39283FA4DD001F52AA /* NSObject+Extension.swift in Sources */,
 				B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */,
@@ -599,6 +602,7 @@
 				B0A04F28283F692D001F52AA /* MainFoodViewFlowCoordinator.swift in Sources */,
 				B031A47A2837B231003FC5EE /* DefaultNetworkService.swift in Sources */,
 				B0B9AD4B28423D0000EA1D6A /* DetailFoodViewController.swift in Sources */,
+				B0B10E2A28426D1C00970155 /* FoodDetail.swift in Sources */,
 				B0A04F14283E782D001F52AA /* BanChanRepository.swift in Sources */,
 				B0A04F1B283E86E7001F52AA /* AppDIContainer.swift in Sources */,
 				B0A04F16283E78E0001F52AA /* DefaultBanChanRepository.swift in Sources */,

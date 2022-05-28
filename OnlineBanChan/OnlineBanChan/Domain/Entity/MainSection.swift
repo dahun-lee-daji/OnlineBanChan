@@ -29,6 +29,7 @@ extension MainSection: Equatable {
         lhs.items == rhs.items
     }
 }
+
 extension MainSection: IdentifiableType {
     var identity: String {
         return categoryId
@@ -40,5 +41,4 @@ extension MainSection: AnimatableSectionModelType {
         self = original
         self.items = items
     }
-
 }

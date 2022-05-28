@@ -19,7 +19,7 @@ struct MockDataCreater {
     init() {
         let testSectionCardItemValue =
         SectionCardItem.init(detailHashId: "test 상세 해쉬 아이디",
-                              image: "test 이미지",
+                             imageString: "test 이미지",
                               alt: "test Alt",
                               deliveryType: ["test 배송"],
                               title: "test 제목",

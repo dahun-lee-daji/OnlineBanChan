@@ -17,7 +17,6 @@ class MainFoodViewController: UIViewController, StoryboardInitiating {
     var disposeBag = DisposeBag.init()
     
     private var viewModel: MainFoodViewModel!
-    private var banchanRepository: BanChanRepository?
     
     // - MARK: LifeCyle
     
@@ -32,11 +31,9 @@ class MainFoodViewController: UIViewController, StoryboardInitiating {
         super.viewDidAppear(animated)
     }
     
-    static func create(with viewModel: MainFoodViewModel,
-                       banchanRepository: BanChanRepository?) -> MainFoodViewController {
+    static func create(with viewModel: MainFoodViewModel) -> MainFoodViewController {
         let view = MainFoodViewController.instantiateViewController()
         view.viewModel = viewModel
-        view.banchanRepository = banchanRepository
         return view
     }
     
@@ -47,9 +44,9 @@ class MainFoodViewController: UIViewController, StoryboardInitiating {
     }
     
     private func bind() {
-        viewModel.mainSectionSubject
+        viewModel.mainSectionRelay
             .bind(to: mainFoodTableView.rx
-                .items(dataSource: viewModel.dataSource)
+                .items(dataSource: viewModel.dataSource())
             )
             .disposed(by: disposeBag)
     }

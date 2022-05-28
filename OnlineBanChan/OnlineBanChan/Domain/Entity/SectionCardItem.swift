@@ -10,7 +10,7 @@ import RxDataSources
 
 struct SectionCardItem: Codable {
     let detailHashId: String
-    let image: String
+    let imageString: String
     let alt: String
     let deliveryType: [String]
     let title: String
@@ -22,8 +22,9 @@ struct SectionCardItem: Codable {
 
 extension SectionCardItem {
     enum CodingKeys: String, CodingKey {
-        case image, alt, title, badge
+        case alt, title, badge
         case detailHashId = "detail_hash"
+        case imageString = "image"
         case deliveryType = "delivery_type"
         case itemDescription = "description"
         case price = "s_price"

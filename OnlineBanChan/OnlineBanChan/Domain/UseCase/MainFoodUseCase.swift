@@ -10,6 +10,7 @@ import RxSwift
 
 protocol MainFoodUseCase {
     func fetchMainSections() -> Observable<[MainSection]>
+    func fetchFoodImage(imageString: String) -> Observable<Data>
 }
 
 class DefaultMainFoodUseCase: MainFoodUseCase {
@@ -25,6 +26,10 @@ class DefaultMainFoodUseCase: MainFoodUseCase {
     
     func fetchMainSections() -> Observable<[MainSection]> {
         banchanRepository.fetchDishList()
+    }
+    
+    func fetchFoodImage(imageString: String) -> Observable<Data> {
+        foodImageRepository.fetchFoodImage(with: imageString)
     }
     
 }

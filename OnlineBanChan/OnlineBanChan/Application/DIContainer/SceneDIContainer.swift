@@ -46,8 +46,7 @@ class SceneDIContainer {
     
     func makeMainFoodViewController(actions: MainFoodViewModelActions) -> MainFoodViewController {
         return  MainFoodViewController
-            .create(with: makeMainFoodViewModel(action: actions),
-                    banchanRepository: makeBanChanRepository())
+            .create(with: makeMainFoodViewModel(action: actions))
     }
 }
 

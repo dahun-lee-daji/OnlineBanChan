@@ -19,7 +19,6 @@ class DefaultFoodImagesRepository: FoodImagesRepository {
     func fetchFoodImage(with url: String) -> Observable<Data> {
         return networkService.request(with: url)
             .compactMap({ $0})
-        
     }
     
 }

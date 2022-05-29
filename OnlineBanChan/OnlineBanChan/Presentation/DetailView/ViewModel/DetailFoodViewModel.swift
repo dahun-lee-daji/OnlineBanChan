@@ -20,6 +20,8 @@ protocol DetailFoodViewModelOutput {
     var detailFoodRelay: PublishRelay<FoodDetail> {get}
     var productName: BehaviorRelay<String> {get}
     var eventBadge: BehaviorRelay<[String]> {get}
+    var detailDescImage: Observable<Data> {get}
+    var thumbnailImage: Observable<Data> {get}
 }
 
 protocol DetailFoodViewModel: DetailFoodViewModelInput, DetailFoodViewModelOutput {}
@@ -30,15 +32,23 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
     private let detailFoodUseCase: DetailFoodUseCase
     private let actions: DetailFoodViewModelActions?
     
-    private var detailImageList: Observable<[String]> {
+    var detailDescImage: Observable<Data> {
         detailFoodRelay.map({
             $0.detailImages
+        }).flatMap({
+            Observable.from($0)
+        }).flatMap({
+            self.detailFoodUseCase.fetchFoodImage(imageString: $0)
         })
     }
     
-    private var thumbnailImageList: Observable<[String]> {
+    var thumbnailImage: Observable<Data> {
         detailFoodRelay.map({
             $0.thumbnails
+        }).flatMap({
+            Observable.from($0)
+        }).flatMap({
+            self.detailFoodUseCase.fetchFoodImage(imageString: $0)
         })
     }
     

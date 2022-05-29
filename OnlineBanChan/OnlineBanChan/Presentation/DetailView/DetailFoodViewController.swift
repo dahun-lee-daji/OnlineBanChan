@@ -10,8 +10,8 @@ import RxSwift
 
 class DetailFoodViewController: UIViewController, StoryboardInitiating {
     
-    @IBOutlet weak var detailContentView: UIView!
     @IBOutlet weak var thumbnatilContentView: UIView!
+    @IBOutlet weak var foodDescImageStackView: UIStackView!
     
     @IBOutlet weak var imagePagingScrollView: UIScrollView!
     @IBOutlet weak var imagePageController: UIPageControl!
@@ -100,5 +100,25 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
                 })
             })
             .disposed(by: disposeBag)
+        
+        viewModel.detailDescImage
+            .debug()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: {
+                let image = UIImageView.init(image: UIImage.init(data: $0))
+                image.contentMode = .scaleAspectFit
+                self.foodDescImageStackView
+                    .addArrangedSubview(image)
+            })
+            .disposed(by: disposeBag)
+        
+//        viewModel.thumbnailImage
+//            .subscribe(onNext: {
+//                self.thumbnatilContentView.addSubview(
+//                    UIImageView.init(image: UIImage.init(data: $0))
+//                )
+//            })
+//            .disposed(by: disposeBag)
+        
     }
 }

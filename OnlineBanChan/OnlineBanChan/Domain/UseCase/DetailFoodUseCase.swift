@@ -10,7 +10,7 @@ import RxSwift
 
 protocol DetailFoodUseCase {
     func fetchDetail() -> Observable<FoodDetail>
-//    func fetchImages() -> Observable<[Data]>
+    func fetchFoodImage(imageString: String) -> Observable<Data>
 }
 
 class DefaultDetailFoodUseCase: DetailFoodUseCase {
@@ -30,9 +30,9 @@ class DefaultDetailFoodUseCase: DetailFoodUseCase {
     func fetchDetail() -> Observable<FoodDetail> {
         banchanRepository.fetchFoodDetail(hashId: detailHash)
     }
-//    
-//    func fetchImages() -> Observable<[Data]> {
-//        <#code#>
-//    }
+    
+    func fetchFoodImage(imageString: String) -> Observable<Data> {
+        foodImageRepository.fetchFoodImage(with: imageString)
+    }
     
 }

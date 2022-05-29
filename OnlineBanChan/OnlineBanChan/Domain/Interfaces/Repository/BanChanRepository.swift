@@ -10,4 +10,5 @@ import RxSwift
 
 protocol BanChanRepository: Repository {
     func fetchDishList() -> Observable<[MainSection]>
+    func fetchFoodDetail(hashId: String) -> Observable<FoodDetail>
 }

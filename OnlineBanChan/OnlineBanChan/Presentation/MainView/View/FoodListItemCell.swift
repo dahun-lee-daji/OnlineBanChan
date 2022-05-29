@@ -18,6 +18,7 @@ class FoodListItemCell: UITableViewCell {
     @IBOutlet weak var eventBadgeStackView: UIStackView!
     
     let disposeBag = DisposeBag()
+    var detailHashId = String()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,12 +36,6 @@ class FoodListItemCell: UITableViewCell {
             $0.removeFromSuperview()
         })
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func bind(with item: SectionCardItem, data: Observable<Data>) {
 
@@ -56,6 +51,7 @@ class FoodListItemCell: UITableViewCell {
             let badgeLabel = UILabel.init(text: $0)
             self.eventBadgeStackView.addArrangedSubview(badgeLabel)
         })
+        self.detailHashId = item.detailHashId
     }
     
 }

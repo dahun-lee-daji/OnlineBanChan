@@ -9,27 +9,30 @@ import Foundation
 import RxSwift
 
 protocol DetailFoodUseCase {
-    func fetchDetail() -> Observable<[Detail]>
-    func fetchImages() -> Observable<[Data]>
+    func fetchDetail() -> Observable<FoodDetail>
+//    func fetchImages() -> Observable<[Data]>
 }
 
 class DefaultDetailFoodUseCase: DetailFoodUseCase {
     
     private let banchanRepository: BanChanRepository
     private let foodImageRepository: FoodImagesRepository
+    private let detailHash: String
 
     init(banchanRepository: BanChanRepository,
-         foodImageRepository: FoodImagesRepository) {
+         foodImageRepository: FoodImagesRepository,
+         detailHash: String) {
         self.banchanRepository = banchanRepository
         self.foodImageRepository = foodImageRepository
+        self.detailHash = detailHash
     }
     
-    func fetchDetail() -> Observable<[MainSection]> {
-        <#code#>
+    func fetchDetail() -> Observable<FoodDetail> {
+        banchanRepository.fetchFoodDetail(hashId: detailHash)
     }
-    
-    func fetchImages() -> Observable<[Data]> {
-        <#code#>
-    }
+//    
+//    func fetchImages() -> Observable<[Data]> {
+//        <#code#>
+//    }
     
 }

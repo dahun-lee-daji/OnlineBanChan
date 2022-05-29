@@ -11,7 +11,6 @@ import RxSwift
 class DetailFoodViewController: UIViewController, StoryboardInitiating {
     
     var disposeBag = DisposeBag.init()
-    
     private var viewModel: DetailFoodViewModel!
     
     // - MARK: LifeCyle

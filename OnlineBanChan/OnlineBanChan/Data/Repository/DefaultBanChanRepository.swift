@@ -25,4 +25,13 @@ class DefaultBanChanRepository: BanChanRepository {
         })
     }
     
+    func fetchFoodDetail(hashId: String) -> Observable<FoodDetail> {
+        let endPoint = APIEndPoint.getFoodDetailEndPoint(hash: hashId)
+        let dto: Observable<FoodDetailDTO> = networkService.request(with: endPoint)
+            
+        return dto.map({ dto in
+            dto.data
+        })
+    }
+    
 }

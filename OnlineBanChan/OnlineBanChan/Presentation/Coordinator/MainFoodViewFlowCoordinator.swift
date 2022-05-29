@@ -9,7 +9,7 @@ import UIKit
 
 protocol MainFoodViewFlowCoordinatorDependencies  {
     func makeMainFoodViewController(actions: MainFoodViewModelActions) -> MainFoodViewController
-    func makeDetailFoodViewController(actions: DetailFoodViewModelActions, detailHash: String) -> DetailFoodViewController
+    func makeDetailFoodViewController(actions: DetailFoodViewModelActions, prepare: DetailPreparation) -> DetailFoodViewController
 }
 
 class MainFoodViewFlowCoordinator {
@@ -30,9 +30,9 @@ class MainFoodViewFlowCoordinator {
         navigationController?.pushViewController(vc, animated: false)
     }
     
-    private func pushFoodDetailView(hashId: String) {
+    private func pushFoodDetailView(prepare: DetailPreparation) {
         let actions = DetailFoodViewModelActions.init()
-        let vc = dependencies.makeDetailFoodViewController(actions: actions, detailHash: hashId)
+        let vc = dependencies.makeDetailFoodViewController(actions: actions, prepare: prepare)
         navigationController?.pushViewController(vc, animated: true)
     }
     

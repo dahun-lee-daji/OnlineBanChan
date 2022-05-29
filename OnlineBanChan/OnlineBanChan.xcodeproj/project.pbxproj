@@ -42,6 +42,7 @@
 		B0B10E26284269F100970155 /* DetailFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E25284269F100970155 /* DetailFoodViewModel.swift */; };
 		B0B10E2828426A8B00970155 /* DetailFoodUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */; };
 		B0B10E2A28426D1C00970155 /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E2928426D1C00970155 /* FoodDetail.swift */; };
+		B0B39BBD284388D7008EA9A0 /* DetailPreparation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B39BBC284388D7008EA9A0 /* DetailPreparation.swift */; };
 		B0B9AD4B28423D0000EA1D6A /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */; };
 		B0B9AD4D28423D5100EA1D6A /* DetailFoodViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */; };
 		B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F012838DF08009F68F6 /* NetworkTests.swift */; };
@@ -103,6 +104,7 @@
 		B0B10E25284269F100970155 /* DetailFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewModel.swift; sourceTree = "<group>"; };
 		B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodUseCase.swift; sourceTree = "<group>"; };
 		B0B10E2928426D1C00970155 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; };
+		B0B39BBC284388D7008EA9A0 /* DetailPreparation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPreparation.swift; sourceTree = "<group>"; };
 		B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewController.swift; sourceTree = "<group>"; };
 		B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailFoodViewController.storyboard; sourceTree = "<group>"; };
 		B0CC7F012838DF08009F68F6 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				B031A4722837B227003FC5EE /* MainSection.swift */,
 				B031A4732837B227003FC5EE /* SectionCardItem.swift */,
 				B0B10E2928426D1C00970155 /* FoodDetail.swift */,
+				B0B39BBC284388D7008EA9A0 /* DetailPreparation.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */,
 				B0A04F39283FA4DD001F52AA /* NSObject+Extension.swift in Sources */,
 				B0A513C8283635C500A05BB7 /* AppDelegate.swift in Sources */,
+				B0B39BBD284388D7008EA9A0 /* DetailPreparation.swift in Sources */,
 				B0B10E2828426A8B00970155 /* DetailFoodUseCase.swift in Sources */,
 				B0A04F25283F65BE001F52AA /* AppFlowCoordinator.swift in Sources */,
 				B031A4742837B227003FC5EE /* MainSection.swift in Sources */,

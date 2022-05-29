@@ -12,7 +12,7 @@ import RxRelay
 import RxDataSources
 
 struct MainFoodViewModelActions {
-    let pushFoodDetailView: (String) -> Void
+    let pushFoodDetailView: (DetailPreparation) -> Void
 }
 
 protocol MainFoodViewModelInput {
@@ -90,7 +90,11 @@ class DefaultMainFoodViewModel: MainFoodViewModel {
 
 extension DefaultMainFoodViewModel {
     func didSelect(item: SectionCardItem) {
-        actions?.pushFoodDetailView(item.detailHashId)
+        let prepare = DetailPreparation
+            .init(productName: item.title,
+                  hashId: item.detailHashId,
+                  badge: item.badge)
+        actions?.pushFoodDetailView(prepare)
     }
 }
 

@@ -69,7 +69,7 @@ extension UIColor {
 
 extension UILabel {
     
-    fileprivate convenience init(text: String) {
+    convenience init(text: String) {
         self.init(frame: CGRect.init(x: 0, y: 0, width: 90, height: 30))
         let colorDictionary: [String: UIColor] = ["이벤트특가": .init(rgb: 0x80BCFF),
                                                   "런칭특가":.init(rgb: 0x0066D6)]
@@ -81,7 +81,7 @@ extension UILabel {
         self.backgroundColor = colorDictionary[text] ?? UIColor.black
     }
     
-    fileprivate func setPriceLabelWith(default price: String, discount: String?) {
+    func setPriceLabelWith(default price: String, discount: String?) {
         var wholeString = String()
         
         if let unwraped = discount {

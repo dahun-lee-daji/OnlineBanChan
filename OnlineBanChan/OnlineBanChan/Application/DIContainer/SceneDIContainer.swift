@@ -58,17 +58,20 @@ class SceneDIContainer {
                   detailHash: detailHash)
         }
     
-    func makeDetailFoodViewModel(action: DetailFoodViewModelActions, detailHash: String) -> DetailFoodViewModel {
+    func makeDetailFoodViewModel(action: DetailFoodViewModelActions, prepare: DetailPreparation) -> DetailFoodViewModel {
         return DefaultDetailFoodViewModel
-            .init(detailFoodUseCase: makeDetailFoodUseCase(detailHash: detailHash),
-                  actions: action)
+            .init(
+                detailFoodUseCase: makeDetailFoodUseCase(detailHash: prepare.hashId),
+                actions: action,
+                prepare: prepare
+            )
     }
     
-    func makeDetailFoodViewController(actions: DetailFoodViewModelActions, detailHash: String) -> DetailFoodViewController {
+    func makeDetailFoodViewController(actions: DetailFoodViewModelActions, prepare: DetailPreparation) -> DetailFoodViewController {
         return  DetailFoodViewController
             .create(with:
                         makeDetailFoodViewModel(action: actions,
-                                               detailHash: detailHash)
+                                                prepare: prepare)
             )
     }
 }

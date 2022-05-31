@@ -35,5 +35,4 @@ class MainFoodViewFlowCoordinator {
         let vc = dependencies.makeDetailFoodViewController(actions: actions, prepare: prepare)
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }

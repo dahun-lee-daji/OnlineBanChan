@@ -42,6 +42,11 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
     // - MARK: View Settings
     
     func bind() {
+        
+        viewModel.productName
+            .bind(to: self.rx.title)
+            .disposed(by: disposeBag)
+        
         viewModel.productName
             .asDriver()
             .drive(productNameLabel.rx.text)
@@ -59,9 +64,10 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
             .map({
                 $0.prices
             })
+            .withUnretained(self)
             .observe(on: MainScheduler.instance)
-            .bind(onNext: {
-                self.productPrice.setPriceLabelWith(default: $0[0], discount: $0.last)
+            .bind(onNext: { (owner, prices) in
+                owner.productPrice.setPriceLabelWith(default: prices[0], discount: prices.last)
             })
             .disposed(by: disposeBag)
             
@@ -93,21 +99,22 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
                     UILabel.init(text: $0)
                 })
             })
+            .withUnretained(self)
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: {
-                $0.forEach({
-                    self.eventBadgeStackView.addArrangedSubview($0)
+            .subscribe(onNext: { (owner, labels) in
+                labels.forEach({
+                    owner.eventBadgeStackView.addArrangedSubview($0)
                 })
             })
             .disposed(by: disposeBag)
         
         viewModel.detailDescImage
+            .withUnretained(self)
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: {
-                let image = UIImageView.init(image: UIImage.init(data: $0))
+            .subscribe(onNext: { (owner, data) in
+                let image = UIImageView.init(image: UIImage.init(data: data))
                 image.contentMode = .scaleAspectFit
-                self.foodDescImageStackView
-                    .addArrangedSubview(image)
+                owner.foodDescImageStackView.addArrangedSubview(image)
             })
             .disposed(by: disposeBag)
         

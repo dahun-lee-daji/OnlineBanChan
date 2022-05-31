@@ -10,7 +10,6 @@ import RxSwift
 import RxRelay
 
 struct DetailFoodViewModelActions {
-    
 }
 
 protocol DetailFoodViewModelInput {
@@ -86,5 +85,4 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
 // MARK: - INPUT. View event methods
 
 extension DefaultDetailFoodViewModel {
-    
 }

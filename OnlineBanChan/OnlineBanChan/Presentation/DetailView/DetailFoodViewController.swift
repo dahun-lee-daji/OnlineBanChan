@@ -102,7 +102,6 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
             .disposed(by: disposeBag)
         
         viewModel.detailDescImage
-            .debug()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
                 let image = UIImageView.init(image: UIImage.init(data: $0))

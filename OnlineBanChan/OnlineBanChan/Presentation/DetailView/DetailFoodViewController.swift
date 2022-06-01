@@ -22,6 +22,11 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var foodDescImageStackView: UIStackView!
     
+    
+    @IBOutlet weak var quantityStepper: UIStepper!
+    @IBOutlet weak var quantityCountLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    
     private let disposeBag = DisposeBag.init()
     private var viewModel: DetailFoodViewModel!
     
@@ -138,6 +143,19 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
                 numberOfPages + 1
             })
             .bind(to: imagePageController.rx.numberOfPages)
+            .disposed(by: disposeBag)
+        
+        quantityStepper.rx.value
+            .map({
+                Int($0.rounded())
+            })
+            .bind(to: viewModel.itemCountToPurchase)
+            .disposed(by: disposeBag)
+        
+        viewModel.itemCountToPurchase
+            .map({String($0)})
+            .asDriver(onErrorDriveWith: .just("Error"))
+            .drive(quantityCountLabel.rx.text)
             .disposed(by: disposeBag)
     }
     

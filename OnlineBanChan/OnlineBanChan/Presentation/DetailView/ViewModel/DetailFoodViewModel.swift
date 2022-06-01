@@ -21,6 +21,7 @@ protocol DetailFoodViewModelOutput {
     var eventBadge: BehaviorRelay<[String]> {get}
     var detailDescImage: Observable<Data> {get}
     var thumbnailImage: Observable<Data> {get}
+    var itemCountToPurchase: BehaviorSubject<Int> {get}
 }
 
 protocol DetailFoodViewModel: DetailFoodViewModelInput, DetailFoodViewModelOutput {}
@@ -30,6 +31,7 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
     private let disposeBag = DisposeBag()
     private let detailFoodUseCase: DetailFoodUseCase
     private let actions: DetailFoodViewModelActions?
+    var itemCountToPurchase: BehaviorSubject<Int> = .init(value: 0)
     
     // MARK: - OUTPUT
     

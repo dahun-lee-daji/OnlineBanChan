@@ -258,6 +258,9 @@
                         <outlet property="productDescriptionLabel" destination="zyn-ej-xHl" id="8PF-kS-RQU"/>
                         <outlet property="productNameLabel" destination="y3Y-S3-mul" id="Ezu-9F-NEP"/>
                         <outlet property="productPrice" destination="Dpv-fH-DOQ" id="79U-yo-OOu"/>
+                        <outlet property="quantityCountLabel" destination="fid-3S-MRs" id="7ce-88-yoT"/>
+                        <outlet property="quantityStepper" destination="IX7-vR-vb2" id="qfm-yT-LH1"/>
+                        <outlet property="totalPriceLabel" destination="DXe-Ev-zBM" id="bZS-8W-Gex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

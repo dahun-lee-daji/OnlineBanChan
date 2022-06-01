@@ -23,23 +23,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-6R-zrK" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mX-4X-tEU">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mX-4X-tEU">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GT3-oQ-6mL" userLabel="ImagePagingInnerView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" priority="250" constant="414" id="yBo-7w-h8d"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="GT3-oQ-6mL" firstAttribute="trailing" secondItem="art-JX-Gg1" secondAttribute="trailing" id="CdP-ze-G1g"/>
-                                                    <constraint firstItem="GT3-oQ-6mL" firstAttribute="leading" secondItem="art-JX-Gg1" secondAttribute="leading" id="Oku-VQ-oIl"/>
                                                     <constraint firstAttribute="width" secondItem="8mX-4X-tEU" secondAttribute="height" multiplier="1:1" id="bGt-Nj-ugu"/>
-                                                    <constraint firstItem="GT3-oQ-6mL" firstAttribute="top" secondItem="art-JX-Gg1" secondAttribute="top" id="k5v-Bw-gua"/>
-                                                    <constraint firstItem="GT3-oQ-6mL" firstAttribute="bottom" secondItem="art-JX-Gg1" secondAttribute="bottom" id="qgI-uA-0Ue"/>
-                                                    <constraint firstItem="GT3-oQ-6mL" firstAttribute="height" secondItem="FPD-Rx-FFo" secondAttribute="height" id="tF1-bX-naA"/>
                                                 </constraints>
                                                 <viewLayoutGuide key="contentLayoutGuide" id="art-JX-Gg1"/>
                                                 <viewLayoutGuide key="frameLayoutGuide" id="FPD-Rx-FFo"/>
@@ -181,6 +168,7 @@
                                             <constraint firstItem="9dV-hb-fft" firstAttribute="top" secondItem="7jW-3l-ZlV" secondAttribute="bottom" constant="24" id="1ap-zs-d9v"/>
                                             <constraint firstItem="y3Y-S3-mul" firstAttribute="leading" secondItem="TIm-gQ-8PT" secondAttribute="leading" constant="16" id="2Sa-nM-klM"/>
                                             <constraint firstItem="TIm-gQ-8PT" firstAttribute="trailing" secondItem="eqn-o9-zM7" secondAttribute="trailing" constant="16" id="2uS-Ud-xWO"/>
+                                            <constraint firstItem="Ygp-uu-Xqq" firstAttribute="centerX" secondItem="TIm-gQ-8PT" secondAttribute="centerX" id="4Q1-L4-Qfj"/>
                                             <constraint firstItem="DXe-Ev-zBM" firstAttribute="top" secondItem="ILF-9A-iMY" secondAttribute="bottom" constant="24" id="5JH-3d-Q0C"/>
                                             <constraint firstItem="bBm-fL-UDy" firstAttribute="leading" secondItem="zz2-1D-KBM" secondAttribute="leading" id="6gM-Rh-pIX"/>
                                             <constraint firstItem="TIm-gQ-8PT" firstAttribute="trailing" secondItem="y3Y-S3-mul" secondAttribute="trailing" constant="16" id="7BI-ph-2lO"/>
@@ -188,7 +176,6 @@
                                             <constraint firstItem="PV5-mh-XMZ" firstAttribute="leading" secondItem="y3Y-S3-mul" secondAttribute="leading" id="7X9-cP-Iq7"/>
                                             <constraint firstItem="TIm-gQ-8PT" firstAttribute="trailing" secondItem="DXe-Ev-zBM" secondAttribute="trailing" constant="16" id="8mB-M0-Ja6"/>
                                             <constraint firstItem="7jW-3l-ZlV" firstAttribute="top" secondItem="Dpv-fH-DOQ" secondAttribute="bottom" constant="16" id="97u-kI-dSx"/>
-                                            <constraint firstItem="Ygp-uu-Xqq" firstAttribute="centerX" secondItem="8mX-4X-tEU" secondAttribute="centerX" id="Fbd-K6-i1K"/>
                                             <constraint firstItem="fid-3S-MRs" firstAttribute="centerY" secondItem="IX7-vR-vb2" secondAttribute="centerY" id="GBj-Z6-PiV"/>
                                             <constraint firstItem="8mX-4X-tEU" firstAttribute="leading" secondItem="TIm-gQ-8PT" secondAttribute="leading" id="HsT-bM-KtD"/>
                                             <constraint firstItem="ILF-9A-iMY" firstAttribute="top" secondItem="fid-3S-MRs" secondAttribute="bottom" constant="24" id="IY2-mH-1ti"/>
@@ -271,7 +258,6 @@
                         <outlet property="productDescriptionLabel" destination="zyn-ej-xHl" id="8PF-kS-RQU"/>
                         <outlet property="productNameLabel" destination="y3Y-S3-mul" id="Ezu-9F-NEP"/>
                         <outlet property="productPrice" destination="Dpv-fH-DOQ" id="79U-yo-OOu"/>
-                        <outlet property="thumbnatilContentView" destination="GT3-oQ-6mL" id="hzk-ec-678"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

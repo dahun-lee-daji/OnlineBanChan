@@ -7,11 +7,9 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class DetailFoodViewController: UIViewController, StoryboardInitiating {
-    
-    @IBOutlet weak var thumbnatilContentView: UIView!
-    @IBOutlet weak var foodDescImageStackView: UIStackView!
     
     @IBOutlet weak var imagePagingScrollView: UIScrollView!
     @IBOutlet weak var imagePageController: UIPageControl!
@@ -22,6 +20,7 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var delyveryInfoLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
+    @IBOutlet weak var foodDescImageStackView: UIStackView!
     
     private let disposeBag = DisposeBag.init()
     private var viewModel: DetailFoodViewModel!
@@ -118,13 +117,45 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
             })
             .disposed(by: disposeBag)
         
-//        viewModel.thumbnailImage
-//            .subscribe(onNext: {
-//                self.thumbnatilContentView.addSubview(
-//                    UIImageView.init(image: UIImage.init(data: $0))
-//                )
-//            })
-//            .disposed(by: disposeBag)
+        viewModel.thumbnailImage
+            .withUnretained(self)
+            .debug()
+            .subscribe(onNext: { (owner, data) in
+                owner.addContentScrollView(image: UIImage.init(data: data))
+            })
+            .disposed(by: disposeBag)
+        
+        imagePagingScrollView.rx.contentOffset
+            .asObservable()
+            .withUnretained(self.imagePagingScrollView)
+            .map({ (scrollView, offset) in
+                return Int((offset.x / scrollView.frame.size.width).rounded())
+            })
+            .bind(to: imagePageController.rx.currentPage)
+            .disposed(by: disposeBag)
+        
+        viewModel.thumbnailImage.toArray()
+            .map({
+                $0.count
+            })
+            .asObservable()
+            .bind(to: imagePageController.rx.numberOfPages)
+            .disposed(by: disposeBag)
+    }
+    
+    private func addContentScrollView(image : UIImage?) {
+        let i = imagePagingScrollView.subviews.count
+        
+        let imageView = UIImageView()
+        let xPos = self.view.frame.width * CGFloat(i)
+        imageView
+            .frame = CGRect(x: xPos,
+                            y: 0,
+                            width: imagePagingScrollView.bounds.width,
+                            height: imagePagingScrollView.bounds.height)
+        imageView.image = image
+        imagePagingScrollView.addSubview(imageView)
+        imagePagingScrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
         
     }
 }

@@ -119,7 +119,6 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
         
         viewModel.thumbnailImage
             .withUnretained(self)
-            .debug()
             .subscribe(onNext: { (owner, data) in
                 owner.addContentScrollView(image: UIImage.init(data: data))
             })
@@ -134,17 +133,19 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
             .bind(to: imagePageController.rx.currentPage)
             .disposed(by: disposeBag)
         
-        viewModel.thumbnailImage.toArray()
-            .map({
-                $0.count
+        viewModel.thumbnailImage
+            .scan(imagePageController.numberOfPages, accumulator: { numberOfPages ,_ in
+                numberOfPages + 1
             })
-            .asObservable()
             .bind(to: imagePageController.rx.numberOfPages)
             .disposed(by: disposeBag)
     }
     
     private func addContentScrollView(image : UIImage?) {
-        let i = imagePagingScrollView.subviews.count
+        
+        let i = imagePagingScrollView.subviews.filter({
+            $0 is UIImageView
+        }).count
         
         let imageView = UIImageView()
         let xPos = self.view.frame.width * CGFloat(i)

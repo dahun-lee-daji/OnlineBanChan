@@ -31,6 +31,11 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
     private let detailFoodUseCase: DetailFoodUseCase
     private let actions: DetailFoodViewModelActions?
     
+    // MARK: - OUTPUT
+    
+    let detailFoodRelay: PublishRelay<FoodDetail> = .init()
+    let productName: BehaviorRelay<String> = .init(value: "")
+    let eventBadge: BehaviorRelay<[String]> = .init(value: [])
     var detailDescImage: Observable<Data> {
         detailFoodRelay.map({
             $0.detailImages
@@ -50,13 +55,6 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
             self.detailFoodUseCase.fetchFoodImage(imageString: $0)
         })
     }
-    
-    // MARK: - OUTPUT
-    
-    let detailFoodRelay: PublishRelay<FoodDetail> = .init()
-    let productName: BehaviorRelay<String> = .init(value: "")
-    let eventBadge: BehaviorRelay<[String]> = .init(value: [])
-    
     // MARK: - Init
     
     init(detailFoodUseCase: DetailFoodUseCase,

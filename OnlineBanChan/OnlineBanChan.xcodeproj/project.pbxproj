@@ -267,10 +267,9 @@
 		B0A04F32283F9E81001F52AA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B0A04F34283F9EF7001F52AA /* FoodListItemCell.swift */,
-				B0A04F35283F9EF7001F52AA /* FoodListItemCell.xib */,
-				B0B0596428421A72001F5981 /* FoodListHeader.swift */,
-				B0B0596828422751001F5981 /* FoodListHeader.xib */,
+				B0A513CB283635C500A05BB7 /* MainFoodViewController.swift */,
+				B0A513CD283635C500A05BB7 /* MainFoodViewController.storyboard */,
+				B0B84611284DFA7A00B0BD01 /* mainFoodTableView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,11 +297,11 @@
 		B0A513C6283635C500A05BB7 /* OnlineBanChan */ = {
 			isa = PBXGroup;
 			children = (
+				B0A513F728364A4900A05BB7 /* Application */,
 				B0A04F0D283E6886001F52AA /* Data */,
 				B031A4762837B231003FC5EE /* Network */,
 				B031A4702837B227003FC5EE /* Domain */,
 				B0A513F928364A9900A05BB7 /* Presentation */,
-				B0A513F728364A4900A05BB7 /* Application */,
 				B0A513F828364A6400A05BB7 /* Resources */,
 			);
 			path = OnlineBanChan;
@@ -363,8 +362,6 @@
 			children = (
 				B0A04F32283F9E81001F52AA /* View */,
 				B0A04F29283F6A7F001F52AA /* ViewModel */,
-				B0A513CB283635C500A05BB7 /* MainFoodViewController.swift */,
-				B0A513CD283635C500A05BB7 /* MainFoodViewController.storyboard */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -377,12 +374,47 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B0B84610284DFA5F00B0BD01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */,
+				B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0B84611284DFA7A00B0BD01 /* mainFoodTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B0B84613284DFAA600B0BD01 /* Header */,
+				B0B84612284DFAA200B0BD01 /* Cell */,
+			);
+			path = mainFoodTableView;
+			sourceTree = "<group>";
+		};
+		B0B84612284DFAA200B0BD01 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B0A04F34283F9EF7001F52AA /* FoodListItemCell.swift */,
+				B0A04F35283F9EF7001F52AA /* FoodListItemCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B0B84613284DFAA600B0BD01 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B0B0596428421A72001F5981 /* FoodListHeader.swift */,
+				B0B0596828422751001F5981 /* FoodListHeader.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		B0B9AD4928423C8400EA1D6A /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				B0B84610284DFA5F00B0BD01 /* View */,
 				B0B10E24284269E200970155 /* ViewModel */,
-				B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */,
-				B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";

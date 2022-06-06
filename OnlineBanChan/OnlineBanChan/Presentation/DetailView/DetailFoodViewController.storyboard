@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-6R-zrK" userLabel="contentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="932"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mX-4X-tEU">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -209,6 +209,7 @@
                                             <constraint firstItem="888-zw-JgS" firstAttribute="leading" secondItem="PV5-mh-XMZ" secondAttribute="leading" id="raO-Zv-0bp"/>
                                             <constraint firstItem="9dV-hb-fft" firstAttribute="leading" secondItem="TIm-gQ-8PT" secondAttribute="leading" constant="16" id="sQj-nd-ZrU"/>
                                             <constraint firstItem="9dV-hb-fft" firstAttribute="trailing" secondItem="TIm-gQ-8PT" secondAttribute="trailing" constant="-16" id="sv7-oe-dYI"/>
+                                            <constraint firstItem="eqn-o9-zM7" firstAttribute="bottom" secondItem="TIm-gQ-8PT" secondAttribute="bottom" id="uA0-rO-81J"/>
                                             <constraint firstItem="Ygp-uu-Xqq" firstAttribute="bottom" secondItem="8mX-4X-tEU" secondAttribute="bottom" constant="-16" id="unW-nn-9xZ"/>
                                             <constraint firstItem="bBm-fL-UDy" firstAttribute="top" secondItem="7jO-h8-RlC" secondAttribute="top" id="wwh-a5-pcR"/>
                                             <constraint firstItem="NrT-mk-mXz" firstAttribute="leading" secondItem="y3Y-S3-mul" secondAttribute="leading" id="yBP-b4-nXh"/>
@@ -216,7 +217,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="k8X-03-Qou">
-                                        <rect key="frame" x="16" y="842" width="382" height="350"/>
+                                        <rect key="frame" x="16" y="956" width="382" height="350"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="200" id="KNk-Ug-HUU"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="350" id="QKv-O6-dJG"/>
@@ -227,7 +228,6 @@
                                     <constraint firstItem="Zxo-9X-hEp" firstAttribute="trailing" secondItem="k8X-03-Qou" secondAttribute="trailing" constant="16" id="6ax-my-vXR"/>
                                     <constraint firstItem="k8X-03-Qou" firstAttribute="top" secondItem="1j6-6R-zrK" secondAttribute="bottom" constant="24" id="7fL-wj-Hjg"/>
                                     <constraint firstItem="k8X-03-Qou" firstAttribute="bottom" secondItem="zqq-72-2lY" secondAttribute="bottom" constant="24" id="AkL-pZ-n8Q"/>
-                                    <constraint firstItem="1j6-6R-zrK" firstAttribute="height" secondItem="zqq-72-2lY" secondAttribute="height" priority="250" id="LaJ-PV-kQp"/>
                                     <constraint firstItem="1j6-6R-zrK" firstAttribute="width" secondItem="Zxo-9X-hEp" secondAttribute="width" id="NxH-cl-ytp"/>
                                     <constraint firstItem="1j6-6R-zrK" firstAttribute="top" secondItem="zqq-72-2lY" secondAttribute="top" id="lW9-A3-Ybc"/>
                                     <constraint firstItem="k8X-03-Qou" firstAttribute="leading" secondItem="Zxo-9X-hEp" secondAttribute="leading" constant="16" id="puT-fs-7jF"/>
@@ -254,6 +254,7 @@
                         <outlet property="foodDescImageStackView" destination="k8X-03-Qou" id="OnL-dP-FQ9"/>
                         <outlet property="imagePageController" destination="Ygp-uu-Xqq" id="b9O-0M-3gX"/>
                         <outlet property="imagePagingScrollView" destination="8mX-4X-tEU" id="LZb-Mv-QWo"/>
+                        <outlet property="orderButton" destination="eqn-o9-zM7" id="vuI-i1-yWg"/>
                         <outlet property="pointLabel" destination="zz2-1D-KBM" id="bTa-re-niw"/>
                         <outlet property="productDescriptionLabel" destination="zyn-ej-xHl" id="8PF-kS-RQU"/>
                         <outlet property="productNameLabel" destination="y3Y-S3-mul" id="Ezu-9F-NEP"/>

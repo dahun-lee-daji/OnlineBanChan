@@ -13,6 +13,7 @@ struct DetailFoodViewModelActions {
 }
 
 protocol DetailFoodViewModelInput {
+    func touchOrderButton() -> Void
 }
 
 protocol DetailFoodViewModelOutput {
@@ -85,4 +86,7 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
 // MARK: - INPUT. View event methods
 
 extension DefaultDetailFoodViewModel {
+    func touchOrderButton() -> Void {
+        print("orderBtnTouched")
+    }
 }

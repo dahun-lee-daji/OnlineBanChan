@@ -27,6 +27,8 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
     @IBOutlet weak var quantityCountLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     
+    @IBOutlet weak var orderButton: UIButton!
+    
     private let disposeBag = DisposeBag.init()
     private var viewModel: DetailFoodViewModel!
     
@@ -157,6 +159,16 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
             .asDriver(onErrorDriveWith: .just("Error"))
             .drive(quantityCountLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        
+        orderButton.rx.tap
+            .debug()
+            .withUnretained(self)
+            .bind(onNext: { (owner, _) in
+                owner.viewModel.touchOrderButton()
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     private func addContentScrollView(image : UIImage?) {

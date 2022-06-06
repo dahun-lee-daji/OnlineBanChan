@@ -10,6 +10,7 @@ import RxSwift
 import RxRelay
 
 struct DetailFoodViewModelActions {
+    let presentAlert: (Bool) -> Void
 }
 
 protocol DetailFoodViewModelInput {
@@ -118,6 +119,13 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
 
 extension DefaultDetailFoodViewModel {
     func touchOrderButton() -> Void {
-        print("orderBtnTouched")
+        let orderCount = try! itemCountToPurchase.value()
+        detailFoodUseCase.mockOrderFunc(orderCount: orderCount)
+            .withUnretained(self)
+            .bind(onNext: { (owner, orderResult) in
+                owner.actions?.presentAlert(orderResult)
+            })
+            .disposed(by: disposeBag)
     }
+    
 }

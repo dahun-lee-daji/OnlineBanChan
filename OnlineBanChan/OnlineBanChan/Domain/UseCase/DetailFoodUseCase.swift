@@ -11,6 +11,7 @@ import RxSwift
 protocol DetailFoodUseCase {
     func fetchDetail() -> Observable<FoodDetail>
     func fetchFoodImage(imageString: String) -> Observable<Data>
+    func mockOrderFunc(orderCount: Int) -> Observable<Bool>
 }
 
 class DefaultDetailFoodUseCase: DetailFoodUseCase {
@@ -33,6 +34,17 @@ class DefaultDetailFoodUseCase: DetailFoodUseCase {
     
     func fetchFoodImage(imageString: String) -> Observable<Data> {
         foodImageRepository.fetchFoodImage(with: imageString)
+    }
+    
+    func mockOrderFunc(orderCount: Int) -> Observable<Bool> {
+        guard let quantity = detailHash.first(where: {
+            $0.isNumber
+        })?.wholeNumberValue else {
+            return Observable.just(false)
+        }
+        
+        return Observable.just(quantity >= orderCount)
+        
     }
     
 }

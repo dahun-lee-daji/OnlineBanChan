@@ -31,8 +31,26 @@ class MainFoodViewFlowCoordinator {
     }
     
     private func pushFoodDetailView(prepare: DetailPreparation) {
-        let actions = DetailFoodViewModelActions.init()
+        let actions = DetailFoodViewModelActions.init(presentAlert: presentAlert)
         let vc = dependencies.makeDetailFoodViewController(actions: actions, prepare: prepare)
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func presentAlert(bool: Bool) {
+        let title = bool ? "성공" : "실패"
+        let message = bool ? "주문 완료!" :
+        """
+주문 실패!
+수량이 부족해요!
+"""
+        
+        let okAction = UIAlertAction.init(title: "알겠어요!", style: .default)
+        let alert = UIAlertController
+            .init(title: title,
+                  message: message,
+                  preferredStyle: .alert)
+        alert.addAction(okAction)
+        
+        navigationController?.present(alert, animated: true)
     }
 }

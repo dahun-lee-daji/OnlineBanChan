@@ -23,6 +23,7 @@ protocol DetailFoodViewModelOutput {
     var detailDescImage: Observable<Data> {get}
     var thumbnailImage: Observable<Data> {get}
     var itemCountToPurchase: BehaviorSubject<Int> {get}
+    var totalPriceToDisplay: BehaviorRelay<String> {get}
 }
 
 protocol DetailFoodViewModel: DetailFoodViewModelInput, DetailFoodViewModelOutput {}
@@ -32,7 +33,7 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
     private let disposeBag = DisposeBag()
     private let detailFoodUseCase: DetailFoodUseCase
     private let actions: DetailFoodViewModelActions?
-    var itemCountToPurchase: BehaviorSubject<Int> = .init(value: 0)
+    private var itemPrice: Int = 0
     
     // MARK: - OUTPUT
     
@@ -58,6 +59,11 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
             self.detailFoodUseCase.fetchFoodImage(imageString: $0)
         })
     }
+    
+    var itemCountToPurchase: BehaviorSubject<Int> = .init(value: 0)
+    
+    var totalPriceToDisplay: BehaviorRelay<String> = .init(value: "")
+    
     // MARK: - Init
     
     init(detailFoodUseCase: DetailFoodUseCase,
@@ -72,6 +78,7 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
         }
         
         loadData()
+        distribute()
     }
     
     // MARK: - Private ViewModel Funcs
@@ -79,6 +86,30 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
     private func loadData() {
         detailFoodUseCase.fetchDetail()
             .bind(to: detailFoodRelay)
+            .disposed(by: disposeBag)
+    }
+    
+    private func distribute() {
+        
+        detailFoodRelay.bind(onNext: { [unowned self] in
+            let prices = $0.prices
+                .map({
+                    $0.filter({
+                        $0.isNumber
+                    })
+                })
+            if let minValue = prices.min(),
+               let intMinValue = Int(minValue) {
+                itemPrice = intMinValue
+            }
+        })
+        .disposed(by: disposeBag)
+        
+        itemCountToPurchase
+            .map({ [unowned self] in
+                String($0 * itemPrice) + " 원"
+            })
+            .bind(to: totalPriceToDisplay)
             .disposed(by: disposeBag)
     }
 }

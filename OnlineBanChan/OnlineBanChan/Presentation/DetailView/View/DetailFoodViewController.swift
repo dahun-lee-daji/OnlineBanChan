@@ -160,9 +160,12 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
             .drive(quantityCountLabel.rx.text)
             .disposed(by: disposeBag)
         
+        viewModel.totalPriceToDisplay
+            .asDriver(onErrorDriveWith: .just("Error"))
+            .drive(totalPriceLabel.rx.text)
+            .disposed(by: disposeBag)
         
         orderButton.rx.tap
-            .debug()
             .withUnretained(self)
             .bind(onNext: { (owner, _) in
                 owner.viewModel.touchOrderButton()

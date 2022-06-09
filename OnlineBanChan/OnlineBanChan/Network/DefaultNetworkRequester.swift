@@ -37,10 +37,7 @@ class DefaultNetworkRequester: NetworkRequesting {
                     observer.onCompleted()
                 })
                 
-                
-            
             return Disposables.create {
-                
                 dataRequester.cancel()
             }
         })

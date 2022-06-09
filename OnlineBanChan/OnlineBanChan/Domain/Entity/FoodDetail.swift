@@ -21,6 +21,17 @@ struct FoodDetail: Codable {
     let deliveryFee: String
     let prices: [String]
     let detailImages: [String]
+    
+    init() {
+        self.topImage = ""
+        self.thumbnails = []
+        self.productDescription = ""
+        self.point = ""
+        self.deliveryInfo = ""
+        self.deliveryFee = ""
+        self.prices = []
+        self.detailImages = []
+    }
 }
 
 extension FoodDetail {

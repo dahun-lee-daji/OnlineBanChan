@@ -18,13 +18,18 @@ protocol DetailFoodViewModelInput {
 }
 
 protocol DetailFoodViewModelOutput {
-    var detailFoodRelay: PublishRelay<FoodDetail> {get}
-    var productName: BehaviorRelay<String> {get}
-    var eventBadge: BehaviorRelay<[String]> {get}
+    var productName: Observable<String> {get}
+    var eventBadge: Observable<[String]> {get}
     var detailDescImage: Observable<Data> {get}
     var thumbnailImage: Observable<Data> {get}
     var itemCountToPurchase: BehaviorSubject<Int> {get}
-    var totalPriceToDisplay: BehaviorRelay<String> {get}
+    var totalPriceToDisplay: BehaviorSubject<String> {get}
+    var productDescription: Observable<String> {get}
+    var foodPrices: Observable<[String]> {get}
+    var deliveryFee: Observable<String> {get}
+    var deliveryInfo: Observable<String> {get}
+    var pointToEarn: Observable<String> {get}
+    
 }
 
 protocol DetailFoodViewModel: DetailFoodViewModelInput, DetailFoodViewModelOutput {}
@@ -35,14 +40,14 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
     private let detailFoodUseCase: DetailFoodUseCase
     private let actions: DetailFoodViewModelActions?
     private var itemPrice: Int = 0
+    private let loadedData: BehaviorSubject<FoodDetail> = .init(value: FoodDetail.init())
     
     // MARK: - OUTPUT
     
-    let detailFoodRelay: PublishRelay<FoodDetail> = .init()
-    let productName: BehaviorRelay<String> = .init(value: "")
-    let eventBadge: BehaviorRelay<[String]> = .init(value: [])
+    var productName: Observable<String> // initalizer에서 할당
+    var eventBadge: Observable<[String]> // initalizer에서 할당
     var detailDescImage: Observable<Data> {
-        detailFoodRelay.map({
+        loadedData.map({
             $0.detailImages
         }).flatMap({
             Observable.from($0)
@@ -52,7 +57,7 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
     }
     
     var thumbnailImage: Observable<Data> {
-        detailFoodRelay.map({
+        loadedData.map({
             $0.thumbnails
         }).flatMap({
             Observable.from($0)
@@ -61,9 +66,39 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
         })
     }
     
+    var productDescription: Observable<String> {
+        loadedData.map({
+            $0.productDescription
+        })
+    }
+    
+    var foodPrices: Observable<[String]> {
+        loadedData.map({
+            $0.prices
+        })
+    }
+    
+    var deliveryFee: Observable<String> {
+        loadedData.map({
+            $0.deliveryFee
+        })
+    }
+    
+    var deliveryInfo: Observable<String> {
+        loadedData.map({
+            $0.deliveryInfo
+        })
+    }
+    
+    var pointToEarn: Observable<String> {
+        loadedData.map({
+            $0.point
+        })
+    }
+    
     var itemCountToPurchase: BehaviorSubject<Int> = .init(value: 0)
     
-    var totalPriceToDisplay: BehaviorRelay<String> = .init(value: "")
+    var totalPriceToDisplay: BehaviorSubject<String> = .init(value: "")
     
     // MARK: - Init
     
@@ -72,33 +107,36 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
          prepare: DetailPreparation) {
         self.detailFoodUseCase = detailFoodUseCase
         self.actions = actions
-        self.productName.accept(prepare.productName)
+        self.productName = Observable.just(prepare.productName)
         
         if let badges = prepare.badge {
-            eventBadge.accept(badges)
+            self.eventBadge = Observable.just(badges)
+        } else {
+            self.eventBadge = Observable.empty()
         }
         
         loadData()
-        distribute()
+        totalPriceBind()
     }
     
     // MARK: - Private ViewModel Funcs
     
     private func loadData() {
         detailFoodUseCase.fetchDetail()
-            .bind(to: detailFoodRelay)
+            .bind(to: loadedData)
             .disposed(by: disposeBag)
     }
     
-    private func distribute() {
+    private func totalPriceBind() {
         
-        detailFoodRelay.bind(onNext: { [unowned self] in
+        loadedData.bind(onNext: { [unowned self] in
             let prices = $0.prices
                 .map({
                     $0.filter({
                         $0.isNumber
                     })
                 })
+            
             if let minValue = prices.min(),
                let intMinValue = Int(minValue) {
                 itemPrice = intMinValue

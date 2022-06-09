@@ -21,12 +21,9 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
     @IBOutlet weak var delyveryInfoLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var foodDescImageStackView: UIStackView!
-    
-    
     @IBOutlet weak var quantityStepper: UIStepper!
     @IBOutlet weak var quantityCountLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
-    
     @IBOutlet weak var orderButton: UIButton!
     
     private let disposeBag = DisposeBag.init()
@@ -50,52 +47,32 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
     func bind() {
         
         viewModel.productName
-            .bind(to: self.rx.title)
+            .asDriver(onErrorJustReturn: "error")
+            .drive(self.rx.title, productNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel.productName
-            .asDriver()
-            .drive(productNameLabel.rx.text)
+        viewModel.productDescription
+            .asDriver(onErrorJustReturn: "error")
+            .drive(productDescriptionLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel.detailFoodRelay
-            .map({
-                $0.productDescription
-            })
-            .bind(to: productDescriptionLabel.rx.text)
-            .disposed(by: disposeBag)
-            
-        
-        viewModel.detailFoodRelay
-            .map({
-                $0.prices
-            })
+        viewModel.foodPrices
             .withUnretained(self)
             .observe(on: MainScheduler.instance)
             .bind(onNext: { (owner, prices) in
-                owner.productPrice.setPriceLabelWith(default: prices[0], discount: prices.last)
+                owner.productPrice.setPriceLabelWith(default: prices.first ?? "0", discount: prices.last)
             })
             .disposed(by: disposeBag)
-            
         
-        viewModel.detailFoodRelay
-            .map({
-                $0.deliveryFee
-            })
+        viewModel.deliveryFee
             .bind(to: deliveryFeeLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel.detailFoodRelay
-            .map({
-                $0.deliveryInfo
-            })
+        viewModel.deliveryInfo
             .bind(to: delyveryInfoLabel.rx.text)
             .disposed(by: disposeBag)
             
-        viewModel.detailFoodRelay
-            .map({
-                $0.point
-            })
+        viewModel.pointToEarn
             .bind(to: pointLabel.rx.text)
             .disposed(by: disposeBag)
         

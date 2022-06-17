@@ -13,20 +13,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5s-rL-OVA">
-                    <rect key="frame" x="169" y="434" width="76" height="38.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhe-aU-6SC">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="tintColor" red="0.11109749227762222" green="0.10521844774484634" blue="0.092833377420902252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="48"/>
+                    </buttonConfiguration>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="R5s-rL-OVA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="RT5-Rn-RGO"/>
-                <constraint firstItem="R5s-rL-OVA" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="yyO-Hg-ks1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qhe-aU-6SC" secondAttribute="trailing" id="6sa-gs-d9n"/>
+                <constraint firstItem="Qhe-aU-6SC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="HnK-N6-JlF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Qhe-aU-6SC" secondAttribute="bottom" id="MiN-uJ-Zt7"/>
+                <constraint firstItem="Qhe-aU-6SC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="brF-ew-MBm"/>
             </constraints>
             <connections>
-                <outlet property="sectionTitle" destination="R5s-rL-OVA" id="n0N-d0-o1E"/>
+                <outlet property="sectionTitleButton" destination="Qhe-aU-6SC" id="Kpp-FY-mGh"/>
             </connections>
             <point key="canvasLocation" x="-491" y="-23"/>
         </view>

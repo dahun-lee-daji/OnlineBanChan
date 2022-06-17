@@ -80,7 +80,15 @@ extension MainFoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: FoodListHeader.className) as? FoodListHeader else {return UIView() }
         
-        view.setTitle(text: viewModel.mainSectionRelay.value[section].name)
+        let currentSection = viewModel.mainSectionRelay.value[section]
+        
+        view.setTitle(text: currentSection.name)
+        
+        view.sectionTitleButton.rx.tap
+            .bind(onNext: { [unowned self] in
+                viewModel.sectionTouched(sectionName: currentSection.name, sectionItemCount: currentSection.items.count)
+            })
+            .disposed(by: disposeBag)
         
         return view
     }

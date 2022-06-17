@@ -13,10 +13,12 @@ import RxDataSources
 
 struct MainFoodViewModelActions {
     let pushFoodDetailView: (DetailPreparation) -> Void
+    let showToast: (String) -> Void
 }
 
 protocol MainFoodViewModelInput {
     func didSelect(item: SectionCardItem)
+    func sectionTouched(sectionName: String, sectionItemCount: Int)
 }
 
 protocol MainFoodViewModelOutput {
@@ -95,6 +97,10 @@ extension DefaultMainFoodViewModel {
                   hashId: item.detailHashId,
                   badge: item.badge)
         actions?.pushFoodDetailView(prepare)
+    }
+    
+    func sectionTouched(sectionName: String, sectionItemCount: Int) {
+        actions?.showToast(" \(sectionName)은 \(sectionItemCount.description)개 있어요! ")
     }
 }
 

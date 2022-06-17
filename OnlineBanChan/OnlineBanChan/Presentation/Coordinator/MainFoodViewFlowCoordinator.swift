@@ -24,7 +24,7 @@ class MainFoodViewFlowCoordinator {
     }
     
     func start() {
-        let actions = MainFoodViewModelActions.init(pushFoodDetailView: pushFoodDetailView)
+        let actions = MainFoodViewModelActions.init(pushFoodDetailView: pushFoodDetailView, showToast: showToast)
         let vc = dependencies.makeMainFoodViewController(actions: actions)
 
         navigationController?.pushViewController(vc, animated: false)
@@ -53,4 +53,13 @@ class MainFoodViewFlowCoordinator {
         
         navigationController?.present(alert, animated: true)
     }
+    
+    private func showToast(text: String) {
+        guard let navigationController = navigationController else {
+            return
+        }
+
+        Toaster.shared.showUpWith(text: text, to: navigationController.view)
+    }
+    
 }

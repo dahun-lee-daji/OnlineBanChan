@@ -9,7 +9,7 @@ import UIKit
 
 class FoodListHeader: UITableViewHeaderFooterView {
 
-    @IBOutlet weak var sectionTitle: UILabel!
+    @IBOutlet weak var sectionTitleButton: UIButton!
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -20,23 +20,11 @@ class FoodListHeader: UITableViewHeaderFooterView {
     }
     
     override func awakeFromNib() {
-        designateSubView()
-        self.contentView.addSubview(sectionTitle)
+        super.awakeFromNib()
     }
     
     func setTitle(text: String) {
-        self.sectionTitle.text = text
+        self.sectionTitleButton.setTitle(text, for: .normal)
     }
     
-    private func designateSubView() {
-        sectionTitle.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            sectionTitle.topAnchor.constraint(equalTo: self.topAnchor),
-            sectionTitle.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            sectionTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            sectionTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        ])
-    }
-
 }

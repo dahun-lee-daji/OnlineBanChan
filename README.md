@@ -47,6 +47,7 @@
 # 회고
 
 # 일기같은, 개발일지
-[개발일지로 가는 링크😊][(https://github.com/dahun-lee-daji/swift-pokergameapp/wiki/%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EC%A7%80](https://github.com/dahun-lee-daji/OnlineBanChan/wiki/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80))
+
+[개발일지로 가는 링크😊](https://github.com/dahun-lee-daji/OnlineBanChan/wiki/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80)
 
 

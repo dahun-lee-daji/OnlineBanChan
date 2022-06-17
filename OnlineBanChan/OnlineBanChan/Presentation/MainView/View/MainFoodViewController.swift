@@ -45,6 +45,13 @@ class MainFoodViewController: UIViewController, StoryboardInitiating {
                 .items(dataSource: viewModel.dataSource)
             )
             .disposed(by: disposeBag)
+        
+        mainFoodTableView.rx.modelSelected(SectionCardItem.self)
+            .asObservable()
+            .bind(onNext: { selectedItem in
+                self.viewModel.didSelect(item: selectedItem)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setTableViewCell() {

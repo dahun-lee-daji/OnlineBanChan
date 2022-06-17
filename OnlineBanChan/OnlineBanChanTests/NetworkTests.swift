@@ -46,7 +46,7 @@ class NetworkTests: XCTestCase {
         let expect = expectation(description: "testDecodeWholeResponse waiting 3sec")
         
         
-        let data: Observable<WholeResponse> = sut.request(with: APIEndPoint.getSectionsEndPoint())
+        let data: Observable<MainSectionsDTO> = sut.request(with: APIEndPoint.getSectionsEndPoint())
         
         data.subscribe({ response in
                 
@@ -71,7 +71,7 @@ class NetworkTests: XCTestCase {
         let expect = expectation(description: "testRealConnectWithWholeResponse waiting 3sec")
         
         sut = DefaultNetworkService.init()
-        let data: Observable<WholeResponse> = sut.request(with: APIEndPoint.getSectionsEndPoint())
+        let data: Observable<MainSectionsDTO> = sut.request(with: APIEndPoint.getSectionsEndPoint())
         
         data.subscribe({ response in
             switch response {

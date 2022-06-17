@@ -19,6 +19,7 @@ enum HostType: String {
 
 enum APIPath: String {
     case sections = "/develop/baminchan/best"
+    case detail = "/develop/baminchan/detail/"
 }
 
 struct APIEndPoint {
@@ -30,6 +31,10 @@ struct APIEndPoint {
                              httpMethod: .get)
     }
     
+    static func getFoodDetailEndPoint(hash: String) -> EndPoint {
+        return EndPoint.init(scheme: SchemeType.https.rawValue,
+                             host: HostType.dishDataHost.rawValue,
+                             apiPath: APIPath.detail.rawValue + hash,
+                             httpMethod: .get)
+    }
 }
-//http://public.codesquad.kr/jk/storeapp/data/main/675_ZIP_P_0057_T.jpg
-//http://public.codesquad.kr/jk/storeapp/data/side/84_ZIP_P_6006_T.jpg

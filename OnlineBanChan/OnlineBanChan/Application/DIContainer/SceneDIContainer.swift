@@ -48,6 +48,32 @@ class SceneDIContainer {
         return  MainFoodViewController
             .create(with: makeMainFoodViewModel(action: actions))
     }
+    
+    // MARK: - DetailFoodView
+    
+    func makeDetailFoodUseCase(detailHash: String) -> DetailFoodUseCase {
+        return DefaultDetailFoodUseCase
+            .init(banchanRepository: makeBanChanRepository(),
+                  foodImageRepository: makeFoodImagesRepository(),
+                  detailHash: detailHash)
+        }
+    
+    func makeDetailFoodViewModel(action: DetailFoodViewModelActions, prepare: DetailPreparation) -> DetailFoodViewModel {
+        return DefaultDetailFoodViewModel
+            .init(
+                detailFoodUseCase: makeDetailFoodUseCase(detailHash: prepare.hashId),
+                actions: action,
+                prepare: prepare
+            )
+    }
+    
+    func makeDetailFoodViewController(actions: DetailFoodViewModelActions, prepare: DetailPreparation) -> DetailFoodViewController {
+        return  DetailFoodViewController
+            .create(with:
+                        makeDetailFoodViewModel(action: actions,
+                                                prepare: prepare)
+            )
+    }
 }
 
 extension SceneDIContainer: MainFoodViewFlowCoordinatorDependencies {}

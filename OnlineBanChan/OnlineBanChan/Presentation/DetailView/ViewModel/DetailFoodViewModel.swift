@@ -74,7 +74,7 @@ class DefaultDetailFoodViewModel: DetailFoodViewModel {
     
     var foodPrices: Observable<[String]> {
         loadedData.map({
-            $0.prices
+            $0.prices.sorted(by: >)
         })
     }
     

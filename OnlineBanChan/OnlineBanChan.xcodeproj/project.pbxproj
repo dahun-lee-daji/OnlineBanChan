@@ -43,6 +43,7 @@
 		B0B10E2828426A8B00970155 /* DetailFoodUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */; };
 		B0B10E2A28426D1C00970155 /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10E2928426D1C00970155 /* FoodDetail.swift */; };
 		B0B39BBD284388D7008EA9A0 /* DetailPreparation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B39BBC284388D7008EA9A0 /* DetailPreparation.swift */; };
+		B0B6305D285C796300BCDBA8 /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6305C285C796300BCDBA8 /* UIKit+Extension.swift */; };
 		B0B9AD4B28423D0000EA1D6A /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */; };
 		B0B9AD4D28423D5100EA1D6A /* DetailFoodViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */; };
 		B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F012838DF08009F68F6 /* NetworkTests.swift */; };
@@ -105,6 +106,7 @@
 		B0B10E2728426A8B00970155 /* DetailFoodUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodUseCase.swift; sourceTree = "<group>"; };
 		B0B10E2928426D1C00970155 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; };
 		B0B39BBC284388D7008EA9A0 /* DetailPreparation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPreparation.swift; sourceTree = "<group>"; };
+		B0B6305C285C796300BCDBA8 /* UIKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
 		B0B9AD4A28423D0000EA1D6A /* DetailFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewController.swift; sourceTree = "<group>"; };
 		B0B9AD4C28423D5100EA1D6A /* DetailFoodViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailFoodViewController.storyboard; sourceTree = "<group>"; };
 		B0CC7F012838DF08009F68F6 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				B0A04F2D283F6DCD001F52AA /* StoryboardInitiating.swift */,
 				B0A04F38283FA4DD001F52AA /* NSObject+Extension.swift */,
+				B0B6305C285C796300BCDBA8 /* UIKit+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				B0A04F10283E68FE001F52AA /* APIEndPoint.swift in Sources */,
 				B0A04F21283E9D12001F52AA /* DefaultFoodImagesRepository.swift in Sources */,
 				B0A513CC283635C500A05BB7 /* MainFoodViewController.swift in Sources */,
+				B0B6305D285C796300BCDBA8 /* UIKit+Extension.swift in Sources */,
 				B0A04F1D283E87AC001F52AA /* SceneDIContainer.swift in Sources */,
 				B031A47E2837BD0B003FC5EE /* MainSectionsDTO.swift in Sources */,
 				B031A47C2837B231003FC5EE /* EndPoint.swift in Sources */,

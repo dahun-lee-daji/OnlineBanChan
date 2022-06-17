@@ -15,8 +15,8 @@ struct SectionCardItem: Codable {
     let deliveryType: [String]
     let title: String
     let itemDescription: String
-    let price: String
-    let discountPrice: String?
+    let priceToSale: String
+    let priceOfNormal: String?
     let badge: [String]?
 }
 
@@ -27,8 +27,8 @@ extension SectionCardItem {
         case imageString = "image"
         case deliveryType = "delivery_type"
         case itemDescription = "description"
-        case price = "s_price"
-        case discountPrice = "n_price"
+        case priceToSale = "s_price"
+        case priceOfNormal = "n_price"
     }
 }
 

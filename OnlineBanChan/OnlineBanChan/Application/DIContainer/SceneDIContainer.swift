@@ -49,7 +49,7 @@ class SceneDIContainer {
             .create(with: makeMainFoodViewModel(action: actions))
     }
     
-    // MARK: - MainFoodView
+    // MARK: - DetailFoodView
     
     func makeDetailFoodUseCase(detailHash: String) -> DetailFoodUseCase {
         return DefaultDetailFoodUseCase

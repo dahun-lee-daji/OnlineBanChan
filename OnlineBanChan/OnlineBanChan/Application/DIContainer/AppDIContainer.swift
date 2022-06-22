@@ -10,10 +10,12 @@ import Foundation
 class AppDIContainer {
     
     lazy var apiNetworkService: NetworkService = DefaultNetworkService()
+    lazy var toaster: Toaster = Toaster()
     
     func makeSceneDIContainer() -> SceneDIContainer {
         let dependencies = SceneDIContainer
-            .Dependencies(apiNetworkService: apiNetworkService)
+            .Dependencies(apiNetworkService: apiNetworkService,
+            toaster: toaster)
         return SceneDIContainer(dependencies: dependencies)
     }
 }

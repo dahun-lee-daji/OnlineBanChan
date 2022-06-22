@@ -11,6 +11,7 @@ class SceneDIContainer {
     
     struct Dependencies {
         let apiNetworkService: NetworkService
+        let toaster: Toaster
     }
     
     private let dependencies: Dependencies
@@ -31,7 +32,10 @@ class SceneDIContainer {
     // MARK: - FlowCoordinator
     
     func makeMainFoodViewFlowCoordinator(navigationController: UINavigationController) -> MainFoodViewFlowCoordinator {
-        return MainFoodViewFlowCoordinator.init(navigationController: navigationController, dependencies: self)
+        return MainFoodViewFlowCoordinator
+            .init(navigationController: navigationController,
+                  dependencies: self,
+                  toaster: dependencies.toaster)
     }
     
     // MARK: - MainFoodView

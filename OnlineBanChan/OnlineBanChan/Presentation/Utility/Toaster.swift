@@ -9,9 +9,6 @@ import UIKit
 import RxSwift
 
 class Toaster {
-    static var shared = Toaster()
-    
-    private init() {}
     
     func showUpWith(text: String, to view: UIView) {
         let label = makeToasterLabel(text: text)

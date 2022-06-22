@@ -16,11 +16,14 @@ class MainFoodViewFlowCoordinator {
     
     private weak var navigationController: UINavigationController?
     private let dependencies: MainFoodViewFlowCoordinatorDependencies
+    private let toaster: Toaster
 
     init(navigationController: UINavigationController,
-         dependencies: MainFoodViewFlowCoordinatorDependencies) {
+         dependencies: MainFoodViewFlowCoordinatorDependencies,
+         toaster: Toaster) {
         self.navigationController = navigationController
         self.dependencies = dependencies
+        self.toaster = toaster
     }
     
     func start() {
@@ -59,7 +62,7 @@ class MainFoodViewFlowCoordinator {
             return
         }
 
-        Toaster.shared.showUpWith(text: text, to: navigationController.view)
+        toaster.showUpWith(text: text, to: navigationController.view)
     }
     
 }

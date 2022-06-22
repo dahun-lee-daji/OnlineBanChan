@@ -24,7 +24,13 @@ class FoodListHeader: UITableViewHeaderFooterView {
     }
     
     func setTitle(text: String) {
-        self.sectionTitleButton.setTitle(text, for: .normal)
+        let range = (text as NSString).range(of: text)
+        let attributed = NSMutableAttributedString.init(string: text)
+        
+        attributed.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 30), range: range)
+        
+        self.sectionTitleButton.setAttributedTitle(attributed, for: .normal)
+        
     }
     
 }

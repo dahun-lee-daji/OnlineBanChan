@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 protocol BanChanRepository: Repository {
-    func fetchDishList() -> Observable<[MainSection]>
+    func fetchBestSection() -> Observable<[MainSection]>
+    func fetchIndividualSection(api: APIEndPoint.APIPath) -> Observable<[MainSection]> 
     func fetchFoodDetail(hashId: String) -> Observable<FoodDetail>
 }

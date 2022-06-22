@@ -41,6 +41,9 @@ class MainFoodViewController: UIViewController, StoryboardInitiating {
     
     private func bind() {
         viewModel.mainSectionRelay
+            .scan(into: [], accumulator: {(old, new) in
+                old.append(contentsOf: new)
+            })
             .bind(to: mainFoodTableView.rx
                 .items(dataSource: viewModel.dataSource)
             )

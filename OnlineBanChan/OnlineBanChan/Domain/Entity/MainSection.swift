@@ -12,6 +12,7 @@ struct MainSection: Codable {
     let categoryId: String
     let name: String
     var items: [SectionCardItem]
+    var type: APIEndPoint.APIPath?
 }
 
 extension MainSection {

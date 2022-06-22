@@ -9,7 +9,8 @@ import Foundation
 import RxSwift
 
 protocol MainFoodUseCase {
-    func fetchMainSections() -> Observable<[MainSection]>
+    func fetchBestSections() -> Observable<[MainSection]>
+    func fetchIndividualSection(api: APIEndPoint.APIPath) -> Observable<[MainSection]>
     func fetchFoodImage(imageString: String) -> Observable<Data>
 }
 
@@ -24,12 +25,16 @@ class DefaultMainFoodUseCase: MainFoodUseCase {
         self.foodImageRepository = foodImageRepository
     }
     
-    func fetchMainSections() -> Observable<[MainSection]> {
-        banchanRepository.fetchDishList()
+    func fetchBestSections() -> Observable<[MainSection]> {
+        banchanRepository.fetchBestSection()
     }
     
     func fetchFoodImage(imageString: String) -> Observable<Data> {
         foodImageRepository.fetchFoodImage(with: imageString)
+    }
+    
+    func fetchIndividualSection(api: APIEndPoint.APIPath) -> Observable<[MainSection]> {
+        banchanRepository.fetchIndividualSection(api: api)
     }
     
 }

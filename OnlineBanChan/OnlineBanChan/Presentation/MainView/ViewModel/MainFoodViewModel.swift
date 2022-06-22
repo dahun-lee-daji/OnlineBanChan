@@ -76,7 +76,7 @@ class DefaultMainFoodViewModel: MainFoodViewModel {
     
     private func loadData() {
         mainFoodUseCase
-            .fetchMainSections()
+            .fetchBestSections()
             .map({
                 $0.sorted(by: { lhs, rhs in
                     lhs.categoryId < rhs.categoryId
@@ -84,6 +84,17 @@ class DefaultMainFoodViewModel: MainFoodViewModel {
             })
             .bind(onNext: {self.mainSectionRelay.accept($0)})
             .disposed(by: disposeBag)
+        
+        let main = mainFoodUseCase.fetchIndividualSection(api: .main)
+        let soup = mainFoodUseCase.fetchIndividualSection(api: .soup)
+        let side = mainFoodUseCase.fetchIndividualSection(api: .side)
+        
+        let merged = Observable.concat([main, soup, side])
+        
+        merged.bind(onNext: { sectionToAdd in
+            self.mainSectionRelay.accept(sectionToAdd)
+        })
+        .disposed(by: disposeBag)
     }
     
 }

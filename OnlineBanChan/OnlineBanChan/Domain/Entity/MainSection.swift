@@ -12,7 +12,6 @@ struct MainSection: Codable {
     let categoryId: String
     let name: String
     var items: [SectionCardItem]
-    var type: APIEndPoint.APIPath?
 }
 
 extension MainSection {
@@ -33,7 +32,7 @@ extension MainSection: Equatable {
 
 extension MainSection: IdentifiableType {
     var identity: String {
-        return categoryId
+        return "\(hashValue)"
     }
 }
 
@@ -41,5 +40,13 @@ extension MainSection: AnimatableSectionModelType {
     init(original: MainSection, items: [SectionCardItem]) {
         self = original
         self.items = items
+    }
+}
+
+extension MainSection: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(categoryId)
+        hasher.combine(name)
+        hasher.combine(items)
     }
 }

@@ -26,8 +26,8 @@ class DefaultBanChanRepository: BanChanRepository {
         let endPoint = APIEndPoint.getSectionsEndPoint(api: .sections)
         let wholeReponse: Observable<MainSectionsDTO> = networkService.request(with: endPoint)
             
-        return wholeReponse.map({
-            $0.body
+        return wholeReponse.map({ DTO in
+            return DTO.body
         })
     }
     
@@ -49,10 +49,14 @@ class DefaultBanChanRepository: BanChanRepository {
         
         
         return wholeResponse.map({ DTO in
-            [MainSection.init(categoryId: "\(api.hashValue)",
+            return [MainSection.init(categoryId: "\(api.hashValue)",
                              name: sectionName,
-                             items: DTO.body,
-                             type: api)]
+                                     items: DTO.body.map({
+                var temp = $0
+                temp.type = api
+                return temp
+            })
+                                    )]
         })
         
     }

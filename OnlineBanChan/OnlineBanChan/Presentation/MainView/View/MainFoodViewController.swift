@@ -83,7 +83,7 @@ extension MainFoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: FoodListHeader.className) as? FoodListHeader else {return UIView() }
         
-        let currentSection = viewModel.mainSectionRelay.value[section]
+        let currentSection = viewModel.sectionData[section]
         
         view.setTitle(text: currentSection.name)
         

@@ -25,6 +25,7 @@ protocol MainFoodViewModelOutput {
     var sceneTitle: String {get}
     var mainSectionRelay: BehaviorRelay<[MainSection]> {get}
     var dataSource: RxTableViewSectionedAnimatedDataSource<MainSection> {get}
+    var sectionData: [MainSection] {get}
 }
 
 protocol MainFoodViewModel: MainFoodViewModelInput, MainFoodViewModelOutput {}
@@ -61,6 +62,7 @@ class DefaultMainFoodViewModel: MainFoodViewModel {
         return dataSource
         
     }
+    var sectionData: [MainSection] = []
     
     
     // MARK: - Init
@@ -75,26 +77,28 @@ class DefaultMainFoodViewModel: MainFoodViewModel {
     // MARK: - Private ViewModel Funcs
     
     private func loadData() {
-        mainFoodUseCase
+        let best: Observable<[MainSection]> = mainFoodUseCase
             .fetchBestSections()
-            .map({
-                $0.sorted(by: { lhs, rhs in
+            .map({ [unowned self] mainSections in
+                let sorted = mainSections.sorted(by: { lhs, rhs in
                     lhs.categoryId < rhs.categoryId
                 })
+                return sorted
             })
-            .bind(onNext: {self.mainSectionRelay.accept($0)})
+        
+            let main = mainFoodUseCase.fetchIndividualSection(api: .main)
+            let soup = mainFoodUseCase.fetchIndividualSection(api: .soup)
+            let side = mainFoodUseCase.fetchIndividualSection(api: .side)
+            
+        
+            let merged = Observable.concat([main, soup, side ,best])
+            
+            merged.bind(onNext: { [unowned self] sectionToAdd in
+                sectionData.append(contentsOf: sectionToAdd)
+                self.mainSectionRelay.accept(sectionToAdd)
+            })
             .disposed(by: disposeBag)
         
-        let main = mainFoodUseCase.fetchIndividualSection(api: .main)
-        let soup = mainFoodUseCase.fetchIndividualSection(api: .soup)
-        let side = mainFoodUseCase.fetchIndividualSection(api: .side)
-        
-        let merged = Observable.concat([main, soup, side])
-        
-        merged.bind(onNext: { sectionToAdd in
-            self.mainSectionRelay.accept(sectionToAdd)
-        })
-        .disposed(by: disposeBag)
     }
     
 }

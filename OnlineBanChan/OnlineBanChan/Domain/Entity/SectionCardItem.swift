@@ -18,6 +18,8 @@ struct SectionCardItem: Codable {
     let priceToSale: String
     let priceOfNormal: String?
     let badge: [String]?
+    
+    var type: APIEndPoint.APIPath?
 }
 
 extension SectionCardItem {
@@ -34,8 +36,21 @@ extension SectionCardItem {
 
 extension SectionCardItem: IdentifiableType {
     var identity: String {
-        return detailHashId
+        return "\(self.hashValue)"
     }
 }
 
-extension SectionCardItem: Hashable {}
+extension SectionCardItem: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(detailHashId)
+        hasher.combine(imageString)
+        hasher.combine(alt)
+        hasher.combine(deliveryType)
+        hasher.combine(title)
+        hasher.combine(itemDescription)
+        hasher.combine(priceToSale)
+        hasher.combine(priceOfNormal)
+        hasher.combine(badge)
+        hasher.combine(type)
+    }
+}

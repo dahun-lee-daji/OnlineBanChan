@@ -9,13 +9,15 @@ import Foundation
 
 class AppDIContainer {
     
-    lazy var apiNetworkService: NetworkService = DefaultNetworkService()
-    lazy var toaster: Toaster = Toaster()
+    lazy private var apiNetworkService = DefaultNetworkService()
+    lazy private var toaster = Toaster()
+    lazy private var imageCacher = ImageCacher.shared
     
     func makeSceneDIContainer() -> SceneDIContainer {
         let dependencies = SceneDIContainer
             .Dependencies(apiNetworkService: apiNetworkService,
-            toaster: toaster)
+                          toaster: toaster,
+                          imageCacher: imageCacher)
         return SceneDIContainer(dependencies: dependencies)
     }
 }

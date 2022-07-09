@@ -18,7 +18,7 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var eventBadgeStackView: UIStackView!
     @IBOutlet weak var deliveryFeeLabel: UILabel!
-    @IBOutlet weak var delyveryInfoLabel: UILabel!
+    @IBOutlet weak var deliveryInfoLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var foodDescImageStackView: UIStackView!
     @IBOutlet weak var quantityStepper: UIStepper!
@@ -69,7 +69,7 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
             .disposed(by: disposeBag)
         
         viewModel.deliveryInfo
-            .bind(to: delyveryInfoLabel.rx.text)
+            .bind(to: deliveryInfoLabel.rx.text)
             .disposed(by: disposeBag)
             
         viewModel.pointToEarn
@@ -153,20 +153,23 @@ class DetailFoodViewController: UIViewController, StoryboardInitiating {
     
     private func addContentScrollView(image : UIImage?) {
         
-        let i = imagePagingScrollView.subviews.filter({
-            $0 is UIImageView
-        }).count
-        
-        let imageView = UIImageView()
-        let xPos = self.view.frame.width * CGFloat(i)
-        imageView
-            .frame = CGRect(x: xPos,
-                            y: 0,
-                            width: imagePagingScrollView.bounds.width,
-                            height: imagePagingScrollView.bounds.height)
-        imageView.image = image
-        imagePagingScrollView.addSubview(imageView)
-        imagePagingScrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
+        DispatchQueue.main.async { [unowned self] in
+            
+            let imageViewCountInScrollView = imagePagingScrollView.subviews.filter({
+                $0 is UIImageView
+            }).count
+            
+            let imageView = UIImageView()
+            let xPos = self.view.frame.width * CGFloat(imageViewCountInScrollView)
+            imageView
+                .frame = CGRect(x: xPos,
+                                y: 0,
+                                width: imagePagingScrollView.bounds.width,
+                                height: imagePagingScrollView.bounds.height)
+            imageView.image = image
+            imagePagingScrollView.addSubview(imageView)
+            imagePagingScrollView.contentSize.width = imageView.frame.width * CGFloat(imageViewCountInScrollView + 1)
+        }
         
     }
 }

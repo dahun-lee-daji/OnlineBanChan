@@ -51,6 +51,8 @@
 		B0CC7F022838DF08009F68F6 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F012838DF08009F68F6 /* NetworkTests.swift */; };
 		B0CC7F052838EE36009F68F6 /* MockNetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F042838EE36009F68F6 /* MockNetworkRequester.swift */; };
 		B0CC7F072838F8AA009F68F6 /* MockDataCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC7F062838F8AA009F68F6 /* MockDataCreater.swift */; };
+		B0D1FE0D287985C300A58FF7 /* Cacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1FE0C287985C300A58FF7 /* Cacher.swift */; };
+		B0D1FE102879861800A58FF7 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1FE0F2879861800A58FF7 /* ImageCacher.swift */; };
 		D6A612D49107AB38FF167DDC /* Pods_OnlineBanChanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399032F995E601EC8B76B1CF /* Pods_OnlineBanChanTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +118,8 @@
 		B0CC7F012838DF08009F68F6 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		B0CC7F042838EE36009F68F6 /* MockNetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequester.swift; sourceTree = "<group>"; };
 		B0CC7F062838F8AA009F68F6 /* MockDataCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataCreater.swift; sourceTree = "<group>"; };
+		B0D1FE0C287985C300A58FF7 /* Cacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
+		B0D1FE0F2879861800A58FF7 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 		F77B606348F9375530563440 /* Pods-OnlineBanChanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineBanChanTests.release.xcconfig"; path = "Target Support Files/Pods-OnlineBanChanTests/Pods-OnlineBanChanTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +199,7 @@
 		B0A04F0D283E6886001F52AA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B0D1FE0E2879860D00A58FF7 /* Cacher */,
 				B0A04F0E283E68E1001F52AA /* Repository */,
 				B0A04F0F283E68FE001F52AA /* APIEndPoint.swift */,
 			);
@@ -213,6 +218,7 @@
 		B0A04F11283E77F8001F52AA /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				B0D1FE0B287985B400A58FF7 /* Cacher */,
 				B0A04F12283E7811001F52AA /* Repository */,
 			);
 			path = Interfaces;
@@ -437,6 +443,22 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		B0D1FE0B287985B400A58FF7 /* Cacher */ = {
+			isa = PBXGroup;
+			children = (
+				B0D1FE0C287985C300A58FF7 /* Cacher.swift */,
+			);
+			path = Cacher;
+			sourceTree = "<group>";
+		};
+		B0D1FE0E2879860D00A58FF7 /* Cacher */ = {
+			isa = PBXGroup;
+			children = (
+				B0D1FE0F2879861800A58FF7 /* ImageCacher.swift */,
+			);
+			path = Cacher;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -629,6 +651,7 @@
 				B0B10E26284269F100970155 /* DetailFoodViewModel.swift in Sources */,
 				B0A04F1F283E9CDD001F52AA /* FoodImagesRepository.swift in Sources */,
 				B031A4752837B227003FC5EE /* SectionCardItem.swift in Sources */,
+				B0D1FE0D287985C300A58FF7 /* Cacher.swift in Sources */,
 				B0A04F31283F7051001F52AA /* MainFoodUseCase.swift in Sources */,
 				B0A04F23283E9EAE001F52AA /* Repository.swift in Sources */,
 				B0A04F2B283F6ACB001F52AA /* MainFoodViewModel.swift in Sources */,
@@ -657,6 +680,7 @@
 				B0B0596528421A72001F5981 /* FoodListHeader.swift in Sources */,
 				B0A04F36283F9EF7001F52AA /* FoodListItemCell.swift in Sources */,
 				B0A513CA283635C500A05BB7 /* SceneDelegate.swift in Sources */,
+				B0D1FE102879861800A58FF7 /* ImageCacher.swift in Sources */,
 				B0A04F2E283F6DCD001F52AA /* StoryboardInitiating.swift in Sources */,
 				B031A47B2837B231003FC5EE /* DefaultNetworkRequester.swift in Sources */,
 			);

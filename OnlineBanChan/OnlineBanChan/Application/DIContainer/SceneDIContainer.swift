@@ -12,6 +12,7 @@ class SceneDIContainer {
     struct Dependencies {
         let apiNetworkService: NetworkService
         let toaster: Toaster
+        let imageCacher: ImageCacher
     }
     
     private let dependencies: Dependencies
@@ -26,7 +27,7 @@ class SceneDIContainer {
     }
     
     func makeFoodImagesRepository() -> FoodImagesRepository {
-        return DefaultFoodImagesRepository(networkService: dependencies.apiNetworkService)
+        return DefaultFoodImagesRepository(networkService: dependencies.apiNetworkService, imageCacher: dependencies.imageCacher)
     }
     
     // MARK: - FlowCoordinator

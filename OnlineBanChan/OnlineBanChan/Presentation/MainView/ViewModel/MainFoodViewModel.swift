@@ -79,7 +79,7 @@ class DefaultMainFoodViewModel: MainFoodViewModel {
     private func loadData() {
         let best: Observable<[MainSection]> = mainFoodUseCase
             .fetchBestSections()
-            .map({ [unowned self] mainSections in
+            .map({ mainSections in
                 let sorted = mainSections.sorted(by: { lhs, rhs in
                     lhs.categoryId < rhs.categoryId
                 })

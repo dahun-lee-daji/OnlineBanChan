@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -218,7 +219,7 @@
                                             <constraint firstItem="TIm-gQ-8PT" firstAttribute="trailing" secondItem="8mX-4X-tEU" secondAttribute="trailing" id="zny-e8-z65"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="k8X-03-Qou">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k8X-03-Qou">
                                         <rect key="frame" x="16" y="975.5" width="382" height="350"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="200" id="KNk-Ug-HUU"/>
@@ -251,7 +252,7 @@
                     </view>
                     <connections>
                         <outlet property="deliveryFeeLabel" destination="cyz-GK-FYs" id="lyf-nB-qqm"/>
-                        <outlet property="delyveryInfoLabel" destination="bBm-fL-UDy" id="bFf-SH-wn3"/>
+                        <outlet property="deliveryInfoLabel" destination="bBm-fL-UDy" id="bFf-SH-wn3"/>
                         <outlet property="eventBadgeStackView" destination="7jW-3l-ZlV" id="iQP-xt-fox"/>
                         <outlet property="foodDescImageStackView" destination="k8X-03-Qou" id="OnL-dP-FQ9"/>
                         <outlet property="imagePageController" destination="Ygp-uu-Xqq" id="b9O-0M-3gX"/>

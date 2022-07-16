@@ -9,8 +9,6 @@
 		<key>NSExceptionDomains</key>
 		<dict/>
 	</dict>
-	<key>CFBundleIdentifier</key>
-	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
